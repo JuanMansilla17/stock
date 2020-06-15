@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Control de stock</title>
+    <title>Iniciar sesión</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie-edge">
@@ -9,31 +9,29 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
+
     <header class="container-fluid bg-primary">
         <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="titulo">SISTEMA DE CONTROL DE STOCK</h1>
+            <div class="col-12">
+                <h1 class="ingreso">INGRESAR</h1>
             </div>
         </div>
     </header>
 
-    <br><br><br>
     <div class="container mt-5">
-        <div class="row mt-5">
-            <div class="col-12 text-center h-50">
-                <a class="iniciar" href="login.html">INICIAR SESIÓN</a>
-            </div>
-        </div>
-
-        <div class="row mt-5">
-            <div class="col-12 text-center ">
-                <a class="iniciar" href="signup.html">CREAR USUARIO</a>
+        <div class="row">
+            <div class="col-12">
+                <form action="" method="POST">
+                    <label class="datosUsuario" for="usuario">Usuario</label>    <input type="text" id="usuario" class="form-control"><br>
+                    <label class="datosUsuario" for="contrasena">Contraseña</label>    <input type="password" id="contrasena" class="form-control"><br><br>
+                    <a href="inicio.html">
+                        <input type="button" value="Registrarse" class="btn btn-primary" style="font-size: 20px;">
+                        <!--cambiar type = "submit" cuando se aplique backend-->
+                    </a>
+                </form>
             </div>
         </div>
     </div>
-    
-
-
 
 
 
