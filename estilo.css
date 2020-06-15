@@ -1,3 +1,9 @@
 .iniciar{
-    border: 200px;
+    font-size: 5vw;
+    color: blue;
+}
+
+.titulo{
+        font-size: 6vw;
+        color: azure;
 }
