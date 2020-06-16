@@ -1,0 +1,22 @@
+.iniciar{
+    font-size: 3vw;
+    color: white;
+    font-weight: bold;
+}
+
+body{
+    background-color: hsla(219, 83%, 45%, 0.575);
+}
+
+.titulo{
+    color: white;
+    font-size: 50px;
+}
+
+.texto{
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    
+}
+
