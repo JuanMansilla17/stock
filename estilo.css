@@ -4,22 +4,19 @@
     font-weight: bold;
 }
 
-.titulo{
-        font-size: 5vw;
-        color: azure;
-}
-
 body{
     background-color: hsla(219, 83%, 45%, 0.575);
 }
 
-.ingreso{
+.titulo{
     color: white;
     font-size: 50px;
 }
 
-.datosUsuario{
+.texto{
     font-weight: bold;
     color: white;
     font-size: 20px;
+    
 }
+
