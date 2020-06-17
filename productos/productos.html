@@ -19,112 +19,159 @@
         </div>
     </header>
 
-	<div class="container-fluid">
-		<div class="container mt-5">
-			<div class="row mt-5">
+
+	<div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <label class="texto" for="categoria">Categoría:</label>
+                <select name="categoria" id="categoria" class="form-control">
+                    <option value="">--Seleccionar--</option>
+                    <option value="">Frutas y verduras</option>
+                    <option value="">Bebidas sin alcohol</option>
+                    <option value="">Limpieza</option>
+                </select>
+                <label class="texto" for="proveedor">Proveedor:</label>
+                <select name="proveedor" id="proveedor" class="form-control">
+                    <option value="">--Seleccionar--</option>
+                    <option value="">Manfrey</option>
+                    <option value="">Región Centro Distribuciones</option>
+                    <option value="">Las Cañitas</option>
+                </select>
+                <div>
+                    <label for="pocaDisponibilidad" class="radio-inline texto">
+                        <input type="radio" name="pocaDisponibilidad" id="pocaDisponibilidad">
+                        Mostrar productos con poca disponibilidad
+                    </label><br>
+                </div>
+
+                <form action="">
+                    <input type="text" class="form-control">
+                    <input type="button" value="Buscar descripción" class="boton btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+
+	<div class="container mt-2">
+        <div class="row">
+            <div class="col">
+                <div class="scrollable">
+                    <table class="table table-striped table-bordered table-hover table-fixed table-dark">
+                        <thead>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Precio venta</th>
+                            <th>Costo compra</th>
+                            <th>Existencia</th>
+                            <th>Stock mínimo</th>
+                            <th>Proveedor</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+								<td>1</td>
+								<td>Yerba Mate Taragui</td>
+								<td>150</td>
+								<td>200</td>
+								<td>5</td>
+								<td>8</td>
+								<td>Región Centro Distribuciones</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Café La Virguinia 500gr</td>
+								<td>180</td>
+								<td>270</td>
+								<td>5</td>
+								<td>6</td>
+								<td>Región Centro Distribuciones</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Dulce de Leche Manfrey 1kg.</td>
+								<td>190</td>
+								<td>29</td>
+								<td>5</td>
+								<td>7</td>
+								<td>Manfrey</td>
+							</tr>
 		
-<link rel="stylesheet" type="text/css" href="css/estilos.css">
-<form action="proceso.php"	method="POST">
+							<tr>
+								<td>4</td>
+								<td>Yerba Mate La Unión 500 gr.</td>
+								<td>150</td>
+								<td>200</td>
+								<td>5</td>
+								<td>7</td>
+								<td>Región Centro Distribuciones</td>
+							</tr>
+                            <tr>
+                                <td>89165</td>
+                                <td>Crema Manfrey</td>
+                                <td>75</td>
+                                <td>90</td>
+                                <td>10</td>
+                                <td>8</td>
+                                <td>Manfrey</td>
+                            </tr>
+                            <tr>
+                                <td>95626</td>
+                                <td>Queso Rayado Manfrey</td>
+                                <td>60</td>
+                                <td>80</td>
+                                <td>13</td>
+                                <td>15</td>
+                                <td>Manfrey</td>
+                            </tr>
+                            <tr>
+                                <td>4546</td>
+                                <td>Queso Rayado Granja de Oro</td>
+                                <td>50</td>
+                                <td>70</td>
+                                <td>13</td>
+                                <td>8</td>
+                                <td>Manfrey</td>
+                            </tr>
+                            <tr>
+                                <td>98453</td>
+                                <td>Leche Larga Vida Manfrey</td>
+                                <td>75</td>
+                                <td>90</td>
+                                <td>12</td>
+                                <td>16</td>
+                                <td>Manfrey</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br><br>
+                <a href="alta productos.html">
+                    <input type="button" value="Agregar" class="boton btn btn-primary"><br><br>
+				</a>
+				<a href="alta productos.html">
+                    <input type="button" value="Modificar" class="boton btn btn-primary"><br><br>
+				</a>
+				<input type="button" value="Eliminar" class="boton btn btn-primary"><br><br>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <a href="../inicio.html">
+                    <input type="button" value="Volver al menú" class="boton btn btn-primary">
+                </a>
+            </div>
+        </div>
+    </div>
+
+
 	
-	<label style="color:white" for="razonSocial"><b>Código</b></label> <input type="text" id="razonSocial" class="form-control">
-	<label style="color:white" for="contacto"><b>Descripción</b></label> <input type="text" id="contacto" class="form-control">
-
-	<label style="color:white" for="razonSocial"><b>Precio de Costo </b></label> <input type="text" id="razonSocial" class="form-control">
-	<label style="color:white" for="contacto"><b>Precio de Venta</b></label> <input type="text" id="contacto" class="form-control">
-
-	<label style="color:white" for="razonSocial"><b>Stock Mínimo</b></label> <input type="text" id="razonSocial" class="form-control">
-	<label style="color:white" for="contacto"><b>Existencia</b></label> <input type="text" id="contacto" class="form-control">
-	<br>
-<div style="text-align: center;">
-	<input type="submit" value="Agregar" class="btn btn-primary" style="font-size: 20px;">
-</div>
-<br>
-<div class="contenedor" style="width: 1000px">
-
-			<table class="table table-hover table-dark table-fixed">
-					<thead>
-					<tr style="width: 900px">
-						<th style="width: 150px" scope="col">Código</th>
-						<th style="width: 150px" scope="col">Descripción</th>
-						<th style="width: 150px" scope="col">Costo</th>
-						<th style="width: 150px" scope="col">Venta</th>
-						<th style="width: 150px" scope="col">Stock Mínimo</th>
-						<th style="width: 150px" scope="col">Existencia</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-						<td style="width: 150px">1</td>
-						<td style="width: 150px">Yerba Mate Taragui</td>
-						<td style="width: 150px">150</td>
-						<td style="width: 150px">200</td>
-						<td style="width: 150px">5</td>
-						<td style="width: 150px">Si</td>
-					</tr>
-					<tr>
-						<td style="width: 150px">2</td>
-						<td style="width: 150px">Café La Virguinia 500gr</td>
-						<td style="width: 150px">180</td>
-						<td style="width: 150px">270</td>
-						<td style="width: 150px">5</td>
-						<td style="width: 150px">Si</td>
-					</tr>
-					<tr>
-						<td style="width: 150px">3</td>
-						<td style="width: 150px">Dulce de Leche Manfrey 1kg.</td>
-						<td style="width: 150px">190</td>
-						<td style="width: 150px">29</td>
-						<td style="width: 150px">5</td>
-						<td style="width: 150px">Si</td>
-					</tr>
-
-					<tr>
-						<td style="width: 150px">4</td>
-						<td style="width: 150px">Yerba Mate La Unión 500 gr.</td>
-						<td style="width: 150px">150</td>
-						<td style="width: 150px">200</td>
-						<td style="width: 150px">5</td>
-						<td style="width: 150px">Si</td>
-					</tr>
-					</tbody>
-			</table>
-
-		<div style="text-align: center;">			
-			<input type="submit" value="Eliminar producto" class="btn btn-primary" style="font-size: 20px;">
-			&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-			<input type="submit" value="Volver al Menú" class="btn btn-primary" style="font-size: 20px;">
-		</div>	
-
-
-</div>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!---******************* TERMINA EL CONTENIDO ****************-->
 
-<script src="js/jquery-3.5.1.slim.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>
