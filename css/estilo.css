@@ -17,6 +17,13 @@ body{
     font-weight: bold;
     color: white;
     font-size: 20px;
-    
 }
 
+.scrollable{
+    height: 400px;
+    overflow: scroll;
+}
+
+.boton{
+    font-size: 20px;
+}
