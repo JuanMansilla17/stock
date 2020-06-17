@@ -1,42 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <title>Ventas por año</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie-edge">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 
-    <link rel="stylesheet" href="estilo.css"> 
+    <link rel="stylesheet" href="../css/estilo.css"> 
 </head>
 <body>
     <header class="container-fluid bg-primary">
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-12">
                 <h1 class="titulo">VENTAS POR AÑO</h1>
             </div>
         </div>
     </header>
 
     <div class="container mt-5">
-        <div class="row mt-5">
-            <div class="col-12  h-50">
+        <div class="row">
+            <div class="col-12">
 
-                <label for="nuevaCategoria">Categorías: </label>
-
-                <select name="proveedor" id="proveedor" class="form-control">
+                <label class="texto" for="categoria">Categoría</label>
+                <select name="categoria" id="categoria" class="form-control">
                     <option value="">--Seleccionar--</option>
                     <option value="">Frutas y Verduras</option>
                     <option value="">Cigarrilos</option>
                     <option value="">Productos de Limpieza</option>
                 </select>
-                
                 <br>
                 <br>
-
-
-                <label for="nuevaCategoria">Producto: </label>
-
-                <select name="proveedor" id="proveedor" class="form-control">
+                <label class="texto" for="producto">Producto: </label>
+                <select name="producto" id="producto" class="form-control">
                     <option value="">--Seleccionar--</option>
                     <option value="">tomate</option>
                     <option value="">lehcuga</option>
@@ -44,41 +40,29 @@
                 </select>
                                        
 
-                    <br>
-                    <br>
+                <br>
+                <br>
                     
-                <label for="nuevaCategoria">Año: </label>
+                <label class="texto" for="anio">Año: </label>
 
-                <select name="proveedor" id="proveedor" class="form-control">
+                <select name="anio" id="anio" class="form-control">
                     <option value="">--Seleccionar--</option>
                     <option value="">2020</option>
                     <option value="">2019</option>
                     <option value="">2018</option>
                 </select>
 
-    
+                <input type="submit" value="Mostrar" class="boton btn btn-primary">
             </div>
         </div> 
 
-        <br>
-        <br>
+        
 
-
-    <div class="container-fluid">
-        <div class="row">
-           <div class="col-12">
-    
-                 <button type="button" class="btn btn-primary" style="font-size: 20px;"> Mostrar </button>
-    
-            </div>
-        </div>
-     </div>
-
-     <div class="container-fluid">
+     <div class="container-fluid mt-5">
         <div class="row">
             <div class="col-12">
 
-               <img src="grafico_barras.jpeg" class="img-fluid">
+               <img src="../img/grafico_barras.jpeg" class="img-fluid">
 
             </div>
         </div>
@@ -90,7 +74,7 @@
 
     <div class="container mt-5">   
         <div class="row mt-5">
-            <div class="col-12 text-center ">
+            <div class="col-12">
                 <a href="../inicio.html">
                     <input type="button" value="Volver al menú" class="btn btn-primary" style="font-size: 20px;"><br><br>
                 </a>
