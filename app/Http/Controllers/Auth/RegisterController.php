@@ -50,7 +50,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'razon_social' => ['required', 'string', 'max:150', 'min:2', 'Alpha Numeric', 'regex:/^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([0-9a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/'],
+            'cuit' => ['required', 'string', 'max:9999999999999', 'numeric', 'unique:users'],
+            'telefono' => ['required', 'string', 'max:99999999999999999', 'numeric'],
+            'domicilio' => ['required', 'string', 'max:150', 'min:2', 'Alpha Numeric', 'regex:/^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([0-9a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/'],
+            'name' => ['required', 'string', 'max:150', 'min:2', 'Alpha Numeric', 'regex:/^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([0-9a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -65,6 +69,10 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
+            'razon_social' => $data['razon_social'],
+            'cuit' => $data['cuit'],
+            'telefono' => $data['telefono'],
+            'domicilio' => $data['domicilio'],
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
