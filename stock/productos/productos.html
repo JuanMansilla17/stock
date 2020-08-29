@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Seleccionar productos</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie-edge">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/estilo.css">
+	<title>Registro de productos</title>
+	<meta charset="utf-8">
+	<meta name="viewport"  content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie-edge">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/estilo.css">
+
 </head>
 <body>
-    <header class="container-fluid bg-primary">
+<!---******************* EMPIEZA EL CONTENIDO ****************-->
+	<header class="container-fluid bg-primary">
         <div class="row">
             <div class="col-12">
-                <h1 class="titulo">SELECCIONAR PRODUCTOS</h1>
+                <h1 class="titulo">PRODUCTOS</h1>
             </div>
         </div>
     </header>
 
-    <div class="container mt-5">
+
+	<div class="container mt-5">
         <div class="row">
             <div class="col">
                 <label class="texto" for="categoria">Categoría:</label>
@@ -28,7 +31,12 @@
                     <option value="">Limpieza</option>
                 </select>
                 <label class="texto" for="proveedor">Proveedor:</label>
-                <input class="form-control" id="disabledInput" type="text" placeholder="Manfrey" disabled><br>
+                <select name="proveedor" id="proveedor" class="form-control">
+                    <option value="">--Seleccionar--</option>
+                    <option value="">Manfrey</option>
+                    <option value="">Región Centro Distribuciones</option>
+                    <option value="">Las Cañitas</option>
+                </select>
                 <div>
                     <label for="pocaDisponibilidad" class="radio-inline texto">
                         <input type="radio" name="pocaDisponibilidad" id="pocaDisponibilidad">
@@ -44,13 +52,12 @@
         </div>
     </div>
 
-    <div class="container mt-2">
+	<div class="container mt-2">
         <div class="row">
             <div class="col">
                 <div class="scrollable">
                     <table class="table table-striped table-bordered table-hover table-fixed table-dark">
                         <thead>
-                            <th>Seleccionar</th>
                             <th>Código</th>
                             <th>Descripción</th>
                             <th>Precio venta</th>
@@ -61,47 +68,43 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input type="checkbox" value=""></td>
-                                <td>1597</td>
-                                <td>Manteca</td>
-                                <td>85</td>
-                                <td>60</td>
-                                <td>10</td>
-                                <td>12</td>
-                                <td>Manfrey</td>
-                            </tr>
+								<td>1</td>
+								<td>Yerba Mate Taragui</td>
+								<td>150</td>
+								<td>200</td>
+								<td>5</td>
+								<td>8</td>
+								<td>Región Centro Distribuciones</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Café La Virguinia 500gr</td>
+								<td>180</td>
+								<td>270</td>
+								<td>5</td>
+								<td>6</td>
+								<td>Región Centro Distribuciones</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Dulce de Leche Manfrey 1kg.</td>
+								<td>190</td>
+								<td>29</td>
+								<td>5</td>
+								<td>7</td>
+								<td>Manfrey</td>
+							</tr>
+		
+							<tr>
+								<td>4</td>
+								<td>Yerba Mate La Unión 500 gr.</td>
+								<td>150</td>
+								<td>200</td>
+								<td>5</td>
+								<td>7</td>
+								<td>Región Centro Distribuciones</td>
+							</tr>
                             <tr>
-                                <td><input type="checkbox" value=""></td>
-                                <td>98651</td>
-                                <td>Sachet de Leche Manfrey</td>
-                                <td>50</td>
-                                <td>70</td>
-                                <td>12</td>
-                                <td>16</td>
-                                <td>Manfrey</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" value=""></td>
-                                <td>9684</td>
-                                <td>Queso Cáscara Colorada Manfrey</td>
-                                <td>90</td>
-                                <td>120</td>
-                                <td>8</td>
-                                <td>5</td>
-                                <td>Manfrey</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" value=""></td>
-                                <td>3216</td>
-                                <td>Yogurt Sachet Manfrey</td>
-                                <td>55</td>
-                                <td>75</td>
-                                <td>10</td>
-                                <td>12</td>
-                                <td>Manfrey</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" value=""></td>
                                 <td>89165</td>
                                 <td>Crema Manfrey</td>
                                 <td>75</td>
@@ -111,7 +114,6 @@
                                 <td>Manfrey</td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" value=""></td>
                                 <td>95626</td>
                                 <td>Queso Rayado Manfrey</td>
                                 <td>60</td>
@@ -121,7 +123,6 @@
                                 <td>Manfrey</td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" value=""></td>
                                 <td>4546</td>
                                 <td>Queso Rayado Granja de Oro</td>
                                 <td>50</td>
@@ -131,7 +132,6 @@
                                 <td>Manfrey</td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" value=""></td>
                                 <td>98453</td>
                                 <td>Leche Larga Vida Manfrey</td>
                                 <td>75</td>
@@ -144,25 +144,33 @@
                     </table>
                 </div>
                 <br><br>
-                <a href="nuevo pedido.html">
-                    <input type="button" value="Seleccionar productos" class="boton btn btn-primary">
-                </a>
+                <a href="alta productos.html">
+                    <input type="button" value="Agregar" class="boton btn btn-primary"><br><br>
+				</a>
+				<a href="alta productos.html">
+                    <input type="button" value="Modificar" class="boton btn btn-primary"><br><br>
+				</a>
+				<input type="button" value="Eliminar" class="boton btn btn-primary"><br><br>
             </div>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col">
-                <a href="nuevo pedido.html">
-                    <input type="button" value="Volver" class="boton btn btn-primary">
+                <a href="../inicio.html">
+                    <input type="button" value="Volver al menú" class="boton btn btn-primary">
                 </a>
             </div>
         </div>
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	
+
+<!---******************* TERMINA EL CONTENIDO ****************-->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>

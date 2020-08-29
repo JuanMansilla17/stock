@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Altadeproductos</title>
+	<meta charset="utf-8">
+	<meta name="viewport"  content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie-edge">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/estilo.css">
+
+</head>
+<body>
+<!---******************* EMPIEZA EL CONTENIDO ****************-->
+<header class="container-fluid bg-primary">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="titulo">ALTA DE PRODUCTOS</h1>
+        </div>
+    </div>
+</header>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <form action="" method="POST">
+                <label class="texto" for="codigo">Código</label> <input type="text" name="codigo" id="codigo" class="form-control"><br>
+                <label class="texto" for="categoria">Categoría</label>
+
+                <select name="Categoria" class="form-control">
+                    <option value="">--Seleccionar--</option>
+                    <option value="limpieza">Limpieza</option>
+                    <option value="frutasyVerduras">Frutas y Verduras</option>
+                    <option value="snacks">Snacks</option>
+                    <option value="bebidasSinAlcohol">Bebidas sin alcohol</option>
+                </select><br>
+
+                <label class="texto" for="descripcion">Descripción</label> <input type="text" name="descripcion" id="descripcion" class="form-control"><br>
+                <label class="texto" for="costoDeCompra">Costo de compra</label> <input type="text" name="costoDeCompra" id="costoDeCompra" class="form-control"><br>
+                <label class="texto" for="precioDeVenta">Precio de venta</label> <input type="text" name="precioDeVenta" id="precioDeVenta" class="form-control"><br>
+                <label class="texto" for="stockMinimo">Stock mínimo</label> <input type="text" name="stockMinimo" id="stockMinimo" class="form-control"><br>
+
+                <label class="texto" for="proveedor">Proveedor</label>
+
+                <select name="Proveedor" class="form-control">
+                    <option value="">--Seleccionar--</option>
+                    <option value="regionCentroDistribuciones">Region Centro Distribuciones</option>
+                    <option value="distribuidoraNestle">Distribuidora Nestlé</option>
+                    <option value="lasCañitas">Las Cañitas</option>
+                    <option value="manfrey">Manfrey</option>
+                </select><br><br>
+
+                <input type="submit" value="Guardar Cambios" class="boton btn btn-primary"><br><br>
+                <a href="productos.html">
+                    <input type="button" value="Volver" class="boton btn btn-primary">
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!---******************* TERMINA EL CONTENIDO ****************-->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
