@@ -2,15 +2,58 @@
 
 @section("cabecera")
 
+CATEGORÍAS
+
+@endsection
+
 
 @section("contenido")
 
 <form  method="post" action="/categorias">
 
-    <input type="text" name="descripcion">
+<table>
+    <tr>
+        <td>Nueva Categoría:</td>
+        <td>
 
-    {{csrf_field()}}
+            <input type="text" name="descripcion">
 
-    <input type="submit" name="enviar" value="Enviar">
+             {{csrf_field()}}
+
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            ID:
+        </td>
+        <td>
+            <input type="number" name="user_id">
+        </td>
+    </tr>
+
+
+
+
+    <tr>
+    <td > 
+
+    <input type="submit" name="enviar" value="Enviar" aling="center">
+
+    </td>
+        <td>
+            <input type="reset" name="borrar" value="Borrar">
+        </td>
+    </tr>
+
+</table>
+
+
 </form>
  
+@endsection
+
+@section("pie")
+
+
+@endsection

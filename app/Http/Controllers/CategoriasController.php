@@ -12,14 +12,20 @@ class CategoriasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     /* MUESTRA LA INFORMACION DE LA BASE DE DATOS*/
     public function index()
     {
-        //
+        $categorias=Categoria:: all();
+        
+        return view ("categorias.index",compact("categorias"));
     }
+    
     public function categorias()
     {
-        return "aca debe ir el formulario";
+      
     }
+    
 
 
 
@@ -31,6 +37,10 @@ class CategoriasController extends Controller
     public function create()
     {
         return view("categorias.create"); 
+
+
+
+
     }
 
     /**
@@ -43,9 +53,13 @@ class CategoriasController extends Controller
     {
         $Categoria= new Categoria;
 
+       
         $Categoria->descripcion=$request->descripcion;
+        $Categoria->user_id=$request->user_id;
 
         $Categoria->save();
+
+        return redirect("/categorias");
     }
 
     /**
@@ -56,7 +70,9 @@ class CategoriasController extends Controller
      */
     public function show($id)
     {
-        //
+        $categoria=Categoria::findOrFail($id);
+
+        return view ("categorias.show", compact ("categoria"));
     }
 
     /**
@@ -67,7 +83,9 @@ class CategoriasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categoria=Categoria::findOrFail($id);
+
+        return view("categorias.edit", compact("categoria"));
     }
 
     /**
@@ -79,7 +97,11 @@ class CategoriasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $categoria=Categoria::findOrFail($id);
+
+        $categoria->update($request->all());
+
+        return redirect("/categorias");
     }
 
     /**
@@ -90,6 +112,10 @@ class CategoriasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categoria=Categoria::findOrFail($id);
+
+        $categoria->delete();
+
+        return redirect("/categorias");
     }
 }
