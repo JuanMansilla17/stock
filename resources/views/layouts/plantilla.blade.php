@@ -29,6 +29,12 @@
             font-size: 20px;
         }
 
+        .mensajeError{
+            font-weight: bold;
+            color: black;
+            font-size: 20px;
+        }
+
         .scrollable{
             height: 400px;
             overflow: scroll;
