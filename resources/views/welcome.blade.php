@@ -2,13 +2,7 @@
 
 
 @section("cabecera")
-<header class="container-fluid bg-primary">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="titulo">SISTEMA DE CONTROL DE STOCK</h1>
-        </div>
-    </div>
-</header>
+SISTEMA DE CONTROL DE STOCK
 @endsection
 
 

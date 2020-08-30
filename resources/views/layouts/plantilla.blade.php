@@ -42,8 +42,16 @@
 </head>
 <body>
     <div class="cabecera">
-        @yield("cabecera")
+        <header class="container-fluid bg-primary">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="titulo">@yield("cabecera")</h1>
+                </div>
+            </div>
+        </header>
     </div>
+    
+    
 
     <div class="contenido">
         @yield("contenido")
