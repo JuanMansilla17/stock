@@ -25,7 +25,7 @@ INICIO
                 <ul class="nav flex-column">
                     <li class="nav-item dropdown"><a href="#" class="texto nav-link dropdown-toggle" data-toggle="dropdown">Stock</a>
                         <div class="dropdown-menu">
-                            <a href="productos/categorias.html " class="dropdown-item" >Categorías</a>
+                            <a href="{{route('categorias.index')}}" class="dropdown-item" >Categorías</a>
                             <a href="proveedores/proveedores.html" class="dropdown-item disabled" >Proveedores</a>
                             <a href="productos/productos.html" class="dropdown-item disabled" >Registro de productos</a>
                         </div>

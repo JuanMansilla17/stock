@@ -23,7 +23,7 @@ class CategoriasController extends Controller
     
     public function categorias()
     {
-      
+
     }
     
 
@@ -37,10 +37,6 @@ class CategoriasController extends Controller
     public function create()
     {
         return view("categorias.create"); 
-
-
-
-
     }
 
     /**

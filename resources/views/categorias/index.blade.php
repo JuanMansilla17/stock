@@ -29,5 +29,4 @@ MOSTRAR CATEGORÍAS
 
 @section("pie")
 
-
 @endsection
