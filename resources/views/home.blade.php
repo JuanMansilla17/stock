@@ -26,18 +26,18 @@ INICIO
                     <li class="nav-item dropdown"><a href="#" class="texto nav-link dropdown-toggle" data-toggle="dropdown">Stock</a>
                         <div class="dropdown-menu">
                             <a href="productos/categorias.html " class="dropdown-item" >Categorías</a>
-                            <a href="proveedores/proveedores.html" class="dropdown-item" >Proveedores</a>
-                            <a href="productos/productos.html" class="dropdown-item" >Registro de productos</a>
+                            <a href="proveedores/proveedores.html" class="dropdown-item disabled" >Proveedores</a>
+                            <a href="productos/productos.html" class="dropdown-item disabled" >Registro de productos</a>
                         </div>
                     </li>
                     
-                    <li class="nav-item"><a href="pedidos/registro de pedidos.html" class="texto nav-link" >Pedidos</a></li>
-                    <li class="nav-item"><a href="ingreso/ingreso de mercaderia.html" class="texto nav-link" >Ingreso de mercadería</a></li>
-                    <li class="nav-item"><a href="egreso/egreso de mercaderia.html" class="texto nav-link">Egreso de mercadería</a></li>
+                    <li class="nav-item"><a href="pedidos/registro de pedidos.html" class="texto nav-link disabled" >Pedidos</a></li>
+                    <li class="nav-item"><a href="ingreso/ingreso de mercaderia.html" class="texto nav-link disabled" >Ingreso de mercadería</a></li>
+                    <li class="nav-item"><a href="egreso/egreso de mercaderia.html" class="texto nav-link disabled">Egreso de mercadería</a></li>
 
                     <li class="nav-item dropdown"><a href="#" class="texto nav-link dropdown-toggle" data-toggle="dropdown">Estadísticas</a>
                         <div class="dropdown-menu">
-                            <a href="estadisticas/ventas.html" class="dropdown-item">Productos más vendidos</a>
+                            <a href="estadisticas/ventas.html" class="dropdown-item disabled">Productos más vendidos</a>
                         </div>
                     </li>
 
