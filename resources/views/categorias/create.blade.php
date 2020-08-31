@@ -23,18 +23,6 @@ CATEGORÍAS
         </td>
     </tr>
 
-    <!--<tr>
-        <td>
-            ID:
-        </td>
-        <td>
-            <input type="number" name="user_id">
-        </td>
-    </tr>-->
-
-
-
-
     <tr>
     <td > 
 
@@ -50,6 +38,13 @@ CATEGORÍAS
 
 
 </form>
+
+@if(count($errors)>0)
+    @foreach($errors->all() as $error)
+        {{$error}}
+    @endforeach
+@endif
+
  
 @endsection
 

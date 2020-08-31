@@ -50,8 +50,9 @@ class CategoriasController extends Controller
      */
     public function store(Request $request)
     {
-        $Categoria= new Categoria;
+        $this->validate($request, ['descripcion'=>'required']);
 
+        $Categoria= new Categoria;
        
         $Categoria->descripcion=$request->descripcion;
         $Categoria->user_id=Auth::id();
@@ -97,6 +98,8 @@ class CategoriasController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, ['descripcion'=>'required']);
+
         $categoria=Categoria::findOrFail($id);
 
         $categoria->update($request->all());
