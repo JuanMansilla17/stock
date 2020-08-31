@@ -1,4 +1,4 @@
-@extends("../layouts.plantillaCategorias")
+@extends("../layouts.plantilla")
 
 @section("cabecera")
 
@@ -9,57 +9,45 @@
 
 @section("contenido")
 
-<form  method="post" action="/categorias/{{$categoria->id}}">
+<div class="container mt-5">
+    <div class="row">
+        <div  class="col-12"> 
+            <form action="/categorias/{{$categoria->id}}" method="POST">
+                <label class="texto" for="nuevaCategoria">Categoría:</label>
+                <input type="text" name="descripcion" class="form-control" value="{{$categoria->descripcion}}">
+                {{csrf_field()}}
+                <input type="hidden" name="_method" value="PUT">
 
-<table>
-    <tr>
-        <td>Nueva Categoría:</td>
-        <td>
+                <input type="submit" name="enviar" value="Actualizar" class="boton btn btn-primary">
+            </form>
 
-            <input type="text" name="descripcion" value="{{$categoria->descripcion}}">
+            <form  method="post" action="/categorias/{{$categoria->id}}">
+                {{csrf_field()}}
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Eliminar registro" class="boton btn btn-danger">
+            </form>
+        </div>
+    </div>
+</div>
 
-             {{csrf_field()}}
-
-             <input type="hidden" name="_method" value="PUT">
-
-        </td>
-    </tr>
-
-    <tr>
-    <td > 
-
-    <input type="submit" name="enviar" value="Actualizar" aling="center">
-
-    </td>
-        <td>
-            <input type="reset" name="borrar" value="Borrar campos">
-        </td>
-    </tr>
-
-</table>
-
-
-</form>
-
-<form  method="post" action="/categorias/{{$categoria->id}}">
-
-
-{{csrf_field()}}
-
-<input type="hidden" name="_method" value="DELETE">
-
-<input type="submit" value="Eliminar registro" >
-
- </form>
-
- @if(count($errors)>0)
+@if(count($errors)>0)
     @foreach($errors->all() as $error)
-        {{$error}}
+        <p class="mensajeError">{{$error}}</p>
     @endforeach
 @endif
+
+<br>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <a href="{{route('categorias.index')}}" class="float-right">
+                    <input type="button" value="Volver" class="boton btn btn-primary"><br><br>
+                </a>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section("pie")
-
 
 @endsection

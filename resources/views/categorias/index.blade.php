@@ -6,7 +6,6 @@ LISTA DE CATEGORÍAS
 
 
 @section("contenido")
-
     <div class="container-fluid mt-5">
         <div class="row"> 
             <div class="col-12">
@@ -33,6 +32,16 @@ LISTA DE CATEGORÍAS
     </div> 
 
 
+    <br>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <a href="{{route('home')}}" class="float-right">
+                    <input type="button" value="Volver al menú" class="boton btn btn-primary"><br><br>
+                </a>
+            </div>
+        </div>
+    </div>
  
 @endsection
 

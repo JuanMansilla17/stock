@@ -10,7 +10,6 @@ AGREGAR CATEGORÍA
 @section("contenido")
 
 <div class="container mt-5">
-
     <div class="row">
         <div  class="col-12"> 
             <form action="/categorias" method="POST">
@@ -30,6 +29,16 @@ AGREGAR CATEGORÍA
     @endforeach
 @endif
 
+<br>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <a href="{{route('categorias.index')}}" class="float-right">
+                    <input type="button" value="Volver" class="boton btn btn-primary"><br><br>
+                </a>
+            </div>
+        </div>
+    </div>
  
 @endsection
 
