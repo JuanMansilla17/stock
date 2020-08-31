@@ -2,7 +2,7 @@
 
 @section("cabecera")
 
-MOSTRAR CATEGORÍAS
+LISTA DE CATEGORÍAS
 
 @endsection
 

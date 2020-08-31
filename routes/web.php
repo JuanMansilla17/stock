@@ -22,7 +22,3 @@ Auth::routes();
 Route::resource('/categorias', 'CategoriasController');
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-/*Route::get('/categorias','CategoriasController@categorias');
-
-Route::get('/crear','CategoriasController@create');

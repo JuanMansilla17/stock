@@ -12,16 +12,7 @@ INICIO
             <div class="col-12">
 
                 
-                <!--este if redirecciona al login si no estás logeado-->
-                @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                @endif
-
-
-
-                <!--FALTA ACOMODAR LAS RUTAS HACIA LOS ARCHIVOS-->
+                <!--FALTA ASIGNAR LAS RUTAS HACIA LAS DEMAS VISTAS-->
                 <ul class="nav flex-column">
                     <li class="nav-item dropdown"><a href="#" class="texto nav-link dropdown-toggle" data-toggle="dropdown">Stock</a>
                         <div class="dropdown-menu">

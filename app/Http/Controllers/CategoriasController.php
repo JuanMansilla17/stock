@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Categoria;
+use App\User;
+
 class CategoriasController extends Controller
 {
     /**
@@ -13,20 +16,20 @@ class CategoriasController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    //Valida que el usuario esté logeado
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
      /* MUESTRA LA INFORMACION DE LA BASE DE DATOS*/
     public function index()
     {
-        $categorias=Categoria:: all();
+        $categorias=User::find(Auth::id())->categorias;
         
         return view ("categorias.index",compact("categorias"));
     }
     
-    public function categorias()
-    {
-
-    }
     
-
 
 
     /**
@@ -51,7 +54,7 @@ class CategoriasController extends Controller
 
        
         $Categoria->descripcion=$request->descripcion;
-        $Categoria->user_id=$request->user_id;
+        $Categoria->user_id=Auth::id();
 
         $Categoria->save();
 

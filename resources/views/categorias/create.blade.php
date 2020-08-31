@@ -23,14 +23,14 @@ CATEGORÍAS
         </td>
     </tr>
 
-    <tr>
+    <!--<tr>
         <td>
             ID:
         </td>
         <td>
             <input type="number" name="user_id">
         </td>
-    </tr>
+    </tr>-->
 
 
 
