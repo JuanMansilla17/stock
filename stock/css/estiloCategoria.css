@@ -1,0 +1,24 @@
+
+.titulo{
+    color:white;
+    font-size: 50xp;
+    
+}
+body{
+    background-color:hsla(219, 83%, 45%, 0.575)
+    ;
+}
+
+td{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+
+}
+.scrollable{
+    height: 200px;
+    overflow: scroll;
+}
+
+
+ 
