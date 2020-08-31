@@ -74,6 +74,7 @@ class CategoriasController extends Controller
         return view ("categorias.show", compact ("categoria"));
     }
 
+    
     /**
      * Show the form for editing the specified resource.
      *

@@ -26,18 +26,6 @@
     </tr>
 
     <tr>
-        <td>
-            ID:
-        </td>
-        <td>
-            <input type="number" name="user_id" value="{{$categoria->id}}">
-        </td>
-    </tr>
-
-
-
-
-    <tr>
     <td > 
 
     <input type="submit" name="enviar" value="Actualizar" aling="center">

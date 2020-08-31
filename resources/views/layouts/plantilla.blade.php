@@ -35,6 +35,10 @@
             font-size: 20px;
         }
 
+        .item{
+            color=white;
+        }
+
         .scrollable{
             height: 400px;
             overflow: scroll;
