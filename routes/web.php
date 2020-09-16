@@ -25,4 +25,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 /*Route::get('/categorias','CategoriasController@categorias');
 
-Route::get('/crear','CategoriasController@create');
+Route::get('/crear','CategoriasController@create');*/
