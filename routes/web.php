@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::resource('/categorias', 'CategoriasController');
 
-Route::get('/productos/{idCategoria}/{idProveedor}/{pocaDisponibilidad}/{descripcion}/list', 'ProductosController@list');
+Route::get('/productos/list', 'ProductosController@list');
 Route::resource('/productos', 'ProductosController');
 
 

@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
+use App\Categoria;
+use App\Proveedor;
+use App\User;
 class ProductosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,11 +21,29 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        return ("ACÁ ESTARÁ EL FILTRO PARA BUSCAR EN LA LISTA");
+        $categorias=User::find(Auth::id())->categorias;
+        $proveedores=User::find(Auth::id())->proveedores;
+
+        return view("productos.index", compact("categorias", "proveedores"));
     }
 
-    public function list($idCategoria, $idProveedor, $pocaDisponibilidad, $descripcion){
-        return ("ACÁ SE MOSTRARÁ LA LISTA DE PRODUCTOS" . $idCategoria);
+    /*public function search(Request $request){
+        $
+
+        return ("Fucking search");
+
+    }*/
+
+    public function list(Request $request){
+        $disponibilidad = "";
+
+        $proveedor = $request->input('proveedor');
+        $categoria = $request->input('categoria');
+        
+        if ($request->get('pocaDisponibilidad')){
+            $disponibilidad = "True";
+        } else{$disponibilidad = "False";}
+        return ("Pruebita: " . $categoria . $proveedor . $disponibilidad);
     }
 
     /**

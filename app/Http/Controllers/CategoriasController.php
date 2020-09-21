@@ -89,6 +89,7 @@ class CategoriasController extends Controller
         return view("categorias.edit", compact("categoria"));
     }
 
+    
     /**
      * Update the specified resource in storage.
      *

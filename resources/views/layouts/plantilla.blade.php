@@ -7,6 +7,15 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    
+    <script type="text/javascript">
+
+        function unselect() {
+            document.querySelectorAll('[name=Tipo]').forEach((x) => x.checked = false);
+        }
+    </script>
+    
     <style>
         .iniciar{
             font-size: 3vw;
