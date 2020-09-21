@@ -21,6 +21,10 @@ Auth::routes();
 
 Route::resource('/categorias', 'CategoriasController');
 
+Route::get('/productos/{idCategoria}/{idProveedor}/{pocaDisponibilidad}/{descripcion}/list', 'ProductosController@list');
+Route::resource('/productos', 'ProductosController');
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 /*Route::get('/categorias','CategoriasController@categorias');
