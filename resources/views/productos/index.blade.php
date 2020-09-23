@@ -8,7 +8,7 @@ BUSCAR PRODUCTOS
 @section("contenido")
 
 <section>
-    <form action="/productos/list" method="POST">
+    <form action="/productos/list" method="GET">
 
         <div>
             <label for="categoria" class="texto">Seleccione una categoría</label>
@@ -26,13 +26,15 @@ BUSCAR PRODUCTOS
                 @endforeach
             </select>
         </div>
-        <div>
+
+
+        <!--<div>
             <label for="pocaDisponibilidad" class="radio-inline texto">
                 <input type="radio" name="pocaDisponibilidad" id="pocaDisponibilidad">
                 Mostrar productos con poca disponibilidad
             </label><br>
             <button id="unselect" onclick="unselect()">Desseleccionar opción</button>
-        </div>
+        </div>-->
         <div>
             <input type="submit" value="Buscar" class="boton btn btn-primary">
         </div>

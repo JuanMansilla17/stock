@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Categoria;
 use App\Proveedor;
 use App\User;
+use App\Producto;
 class ProductosController extends Controller
 {
     public function __construct()
@@ -27,23 +28,10 @@ class ProductosController extends Controller
         return view("productos.index", compact("categorias", "proveedores"));
     }
 
-    /*public function search(Request $request){
-        $
-
-        return ("Fucking search");
-
-    }*/
-
     public function list(Request $request){
-        $disponibilidad = "";
+        $productosBuscados = Producto::where('categoria_id', $request->input('categoria'))->where('proveedor_id', $request->input('proveedor'))->get();
 
-        $proveedor = $request->input('proveedor');
-        $categoria = $request->input('categoria');
-        
-        if ($request->get('pocaDisponibilidad')){
-            $disponibilidad = "True";
-        } else{$disponibilidad = "False";}
-        return ("Pruebita: " . $categoria . $proveedor . $disponibilidad);
+        return view("productos.list", compact("productosBuscados"));
     }
 
     /**
