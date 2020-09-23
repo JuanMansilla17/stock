@@ -18,7 +18,7 @@ INICIO
                         <div class="dropdown-menu">
                             <a href="{{route('categorias.index')}}" class="dropdown-item" >Categorías</a>
                             <a href="proveedores/proveedores.html" class="dropdown-item disabled" >Proveedores</a>
-                            <a href="productos/productos.html" class="dropdown-item disabled" >Registro de productos</a>
+                            <a href="{{route('productos.index')}}" class="dropdown-item" >Registro de productos</a>
                         </div>
                     </li>
                     
