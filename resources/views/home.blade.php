@@ -17,7 +17,7 @@ INICIO
                     <li class="nav-item dropdown"><a href="#" class="texto nav-link dropdown-toggle" data-toggle="dropdown">Stock</a>
                         <div class="dropdown-menu">
                             <a href="{{route('categorias.index')}}" class="dropdown-item" >Categorías</a>
-                            <a href="proveedores/proveedores.html" class="dropdown-item disabled" >Proveedores</a>
+                            <a href="{{route('proveedores.index')}}"class="dropdown-item" >Proveedores</a>
                             <a href="{{route('productos.index')}}" class="dropdown-item" >Registro de productos</a>
                         </div>
                     </li>

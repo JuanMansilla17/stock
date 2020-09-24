@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('/categorias', 'CategoriasController');
+Route::resource('/proveedor', 'ProveedoresController');
 
 Route::get('/productos/list', 'ProductosController@list');
 Route::resource('/productos', 'ProductosController');
@@ -30,3 +31,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 /*Route::get('/categorias','CategoriasController@categorias');
 
 Route::get('/crear','CategoriasController@create');*/
+
+Route::get('/proveedor','ProoveedoresController@proveedor');
+
+Route::get('/crear','ProovedoresController@create');
