@@ -32,6 +32,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/crear','CategoriasController@create');*/
 
-Route::get('/proveedor','ProoveedoresController@proveedor');
+Route::get('/proveedor','ProveedoresController@proveedor');
 
-Route::get('/crear','ProovedoresController@create');
+Route::get('/crear','ProvedoresController@create');
