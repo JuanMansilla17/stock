@@ -42,6 +42,16 @@ REGISTRO DE PRODUCTOS
         </div>
     </div>
 
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <a href="{{route('productos.index')}}" class="float-right">
+                    <input type="button" value="Volver" class="boton btn btn-primary"><br><br>
+                </a>
+            </div>
+        </div>
+    </div>
+
     
 @endsection
 

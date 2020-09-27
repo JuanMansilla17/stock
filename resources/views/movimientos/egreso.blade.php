@@ -1,7 +1,7 @@
 @extends("../layouts/plantilla")
 
 @section("cabecera")
-INGRESO DE MERCADERÍA
+EGRESO DE MERCADERÍA
 @endsection
 
 
@@ -10,7 +10,7 @@ INGRESO DE MERCADERÍA
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <form action="/ingreso/nuevo_ingreso" method="POST">
+            <form action="/egreso/nuevo_egreso" method="POST">
                 @csrf
                 <label class="texto">Código</label> 
                 <input type="text" name="codigo_barras" class="form-control">
@@ -19,6 +19,7 @@ INGRESO DE MERCADERÍA
         </div>
     </div>
 </div>
+
 
 <div class="container mt-5">
     <div class="row">

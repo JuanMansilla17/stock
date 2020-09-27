@@ -23,8 +23,8 @@ INICIO
                     </li>
                     
                     <li class="nav-item"><a href="pedidos/registro de pedidos.html" class="texto nav-link disabled" >Pedidos</a></li>
-                    <li class="nav-item"><a href="ingreso/ingreso de mercaderia.html" class="texto nav-link disabled" >Ingreso de mercadería</a></li>
-                    <li class="nav-item"><a href="egreso/egreso de mercaderia.html" class="texto nav-link disabled">Egreso de mercadería</a></li>
+                    <li class="nav-item"><a href="/ingreso" class="texto nav-link" >Ingreso de mercadería</a></li>
+                    <li class="nav-item"><a href="/egreso" class="texto nav-link">Egreso de mercadería</a></li>
 
                     <li class="nav-item dropdown"><a href="#" class="texto nav-link dropdown-toggle" data-toggle="dropdown">Estadísticas</a>
                         <div class="dropdown-menu">

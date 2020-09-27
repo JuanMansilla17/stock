@@ -2,7 +2,7 @@
 
 
 @section("cabecera")
-NUEVO INGRESO
+NUEVO EGRESO
 @endsection
 
 
@@ -11,7 +11,7 @@ NUEVO INGRESO
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <form action="/ingreso/actualizar_ingreso" method="POST">
+            <form action="/egreso/actualizar_egreso" method="POST">
                 @csrf
                 <div>
                     <label class="texto">Código de barras: </label>
@@ -39,7 +39,7 @@ NUEVO INGRESO
 <div class="container mt-5">
     <div class="row">
         <div class="col-12">
-            <a href="/ingreso" class="float-right">
+            <a href="/egreso" class="float-right">
                 <input type="button" value="Volver" class="boton btn btn-primary"><br><br>
             </a>
         </div>
