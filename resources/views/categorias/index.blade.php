@@ -23,6 +23,7 @@ LISTA DE CATEGORÍAS
             </div>    
         </div>
     </div>
+    
 
     <div class="container mt-5">
         <div class="row">

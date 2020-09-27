@@ -41,6 +41,8 @@ REGISTRO DE PRODUCTOS
             </div>
         </div>
     </div>
+
+    
 @endsection
 
 
