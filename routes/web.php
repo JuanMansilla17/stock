@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('/categorias', 'CategoriasController');
+Route::resource('/proveedores', 'ProveedoresController');
 
 Route::get('/productos/list', 'ProductosController@list');
 Route::resource('/productos', 'ProductosController');
@@ -36,7 +37,6 @@ Route::post('/egreso/nuevo_egreso', 'MovimientosController@nuevo_egreso');
 Route::post('/egreso/actualizar_egreso', 'MovimientosController@actualizar_egreso');
 
 
-//Prueba AJAX
-/*Route::get('/ajax-simple', 'AjaxController@mostrar')->name('mostrar');
-Route::get('/ajax-simple/helloWordl', 'AjaxController@helloWordl')->name('helloWordl');
-Route::post('/ajax-simple/nombre', 'AjaxController@nombre')->name('nombre');*/
+/*Route::get('/proveedor','ProveedoresController@proveedor');
+
+Route::get('/crear','ProvedoresController@create');*/

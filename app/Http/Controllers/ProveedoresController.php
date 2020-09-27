@@ -5,34 +5,32 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-use App\Categoria;
 use App\Proveedor;
 use App\User;
-use App\Producto;
-class ProductosController extends Controller
+
+class ProveedoresController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    //Valida que el usuario esté logeado
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+     /* MUESTRA LA INFORMACION DE LA BASE DE DATOS*/
     public function index()
     {
-        
         $proveedores=User::find(Auth::id())->proveedores;
-
-        return view("productos.index", compact( "proveedores"));
+        
+        return view ("proveedores.index",compact("proveedores"));
     }
+    
+    
 
-    public function list(Request $request){
-        $productosBuscados = Producto::where('categoria_id', $request->input('categoria'))->where('proveedor_id', $request->input('proveedor'))->get();
-
-        return view("productos.list", compact("productosBuscados"));
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -41,8 +39,7 @@ class ProductosController extends Controller
      */
     public function create()
     {
-        //
-        
+        return view("proveedores.create"); 
     }
 
     /**
@@ -53,7 +50,20 @@ class ProductosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, ['razon_social'=>'required']);
+        $this->validate($request, ['telefono'=>'required']);
+        $this->validate($request, ['mail'=>'required']);
+
+        $Proveedor= new Proveedor;
+        
+        $Proveedor->razon_social=$request->razon_social;
+        $Proveedor->telefono=$request->telefono;
+        $Proveedor->mail=$request->mail;
+        $Proveedor->user_id=Auth::id();
+
+        $Proveedor->save();
+
+        return redirect("/proveedores");
     }
 
     /**
@@ -64,10 +74,12 @@ class ProductosController extends Controller
      */
     public function show($id)
     {
-        //
-        
+        $proveedor=Proveedor::findOrFail($id);
+
+        return view ("proveedor.show", compact ("proveedor"));
     }
 
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -76,10 +88,12 @@ class ProductosController extends Controller
      */
     public function edit($id)
     {
-        //
-        
+        $proveedor = Proveedor::findOrFail($id);
+
+        return view("proveedores.edit", compact("proveedor"));
     }
 
+    
     /**
      * Update the specified resource in storage.
      *
@@ -89,7 +103,15 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, ['razon_social'=>'required']);
+        $this->validate($request, ['telefono'=>'required']);
+        $this->validate($request, ['mail'=>'required']);
+
+        $proveedor=Proveedor::findOrFail($id);
+
+        $proveedor->update($request->all());
+
+        return redirect("/proveedores");
     }
 
     /**
@@ -100,6 +122,10 @@ class ProductosController extends Controller
      */
     public function destroy($id)
     {
-        
+        $proveedor=Proveedor::findOrFail($id);
+
+        $proveedor->delete();
+
+        return redirect("/proveedores");
     }
 }
