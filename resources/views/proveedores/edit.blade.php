@@ -9,22 +9,30 @@
 
 
 @section("contenido")
-
 <div class="container mt-5">
     <div class="row">
         <div  class="col-12"> 
-            <form action="/pro/{{$proveedores->id}}" method="POST">
-                <label class="texto" for="nuevaProveedor">Categoría:</label>
-                <input type="text" name="razon_social" class="form-control" value="{{$proveedor->razon_social}}">
-                <input type="text" name="telefono" class="form-control" value="{{$proveedor->telefono}}">
-                <input type="text" name="email" class="form-control" value="{{$proveedor->email}}">
+            <form action="/proveedores/{{$proveedor->id}}" method="POST">
+                <div>
+                    <label class="texto">Razón social:</label>
+                    <input type="text" name="razon_social" class="form-control" value="{{$proveedor->razon_social}}">
+                </div>
+                <div>
+                    <label class="texto">Teléfono:</label>
+                    <input type="text" name="telefono" class="form-control" value="{{$proveedor->telefono}}">
+                </div>
+                <div>
+                    <label class="texto">Mail:</label>
+                    <input type="email" name="mail" class="form-control" value="{{$proveedor->mail}}">
+                </div>
+                
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="PUT">
 
                 <input type="submit" name="enviar" value="Actualizar" class="boton btn btn-primary">
             </form>
 
-            <form  method="post" action="/proveedor/{{proveedor->id}}">
+            <form  method="POST" action="/proveedores/{{$proveedor->id}}">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="DELETE">
                 <input type="submit" value="Eliminar registro" class="boton btn btn-danger">
