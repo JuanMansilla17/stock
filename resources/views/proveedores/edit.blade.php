@@ -31,11 +31,18 @@
 
                 <input type="submit" name="enviar" value="Actualizar" class="boton btn btn-primary">
             </form>
-
-            <form  method="POST" action="/proveedores/{{$proveedor->id}}">
+            <br>
+            <form id="formulario_eliminar" method="POST" action="/proveedores/{{$proveedor->id}}">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="DELETE">
-                <input type="submit" value="Eliminar registro" class="boton btn btn-danger">
+                @if($hijos == 0)
+                    <input id='eliminar' type="submit" value="Eliminar registro" class="boton btn btn-danger">
+                @else
+                    <input id='eliminar' disabled="true" type="submit" value="Eliminar registro" class="boton btn btn-danger">
+                    <p class="texto">Este proveedor no puede ser eliminado porque tiene productos asociados.</p>
+                @endif
+                
+                
             </form>
         </div>
     </div>
@@ -59,6 +66,48 @@
     </div>
 @endsection
 
+
+
 @section("pie")
 
+<!--
+<script>
+addEventListener('load',inicializarEventos,false);
+
+function inicializarEventos()
+{
+    var ob=document.getElementById('eliminar');
+    ob.addEventListener('click',presionEliminar,false);
+}
+
+function presionEliminar(e)
+{
+    e.preventDefault();
+    var url = '/proveedores/{{$proveedor->id}}';
+    eliminarProveedor(url); 
+}
+
+var conexion1;
+function eliminarProveedor(url) 
+{
+  conexion1=new XMLHttpRequest();  
+  conexion1.onreadystatechange = procesarEventos;
+  conexion1.open("DELETE", url, true);
+  conexion1.send();
+}
+
+function procesarEventos()
+{
+  var error = document.getElementById("error");
+  if(conexion1.readyState == 4)
+  {
+    error.innerHTML = "No es posible eliminar este proveedor debido a que tiene un producto asociado. Asígnele otro proveedor al producto o elimínelo";
+  } 
+  else 
+  {
+    error.innerHTML = 'Cargando...';
+  }
+}
+</script>
+-->
 @endsection

@@ -22,10 +22,10 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        
+        $categorias=User::find(Auth::id())->categorias;
         $proveedores=User::find(Auth::id())->proveedores;
 
-        return view("productos.index", compact( "proveedores"));
+        return view("productos.index", compact( "proveedores", "categorias"));
     }
 
     public function list(Request $request){
@@ -41,8 +41,10 @@ class ProductosController extends Controller
      */
     public function create()
     {
-        //
-        
+        $categorias=User::find(Auth::id())->categorias;
+        $proveedores=User::find(Auth::id())->proveedores;
+
+        return view("productos.create", compact("categorias", "proveedores"));
     }
 
     /**
@@ -53,7 +55,30 @@ class ProductosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Producto= new Producto;
+
+        $this->validate($request,
+        ['codigo_barras' => 'required|numeric|unique:productos,codigo_barras',
+        'descripcion' => 'required',
+        'costo_compra' => 'required|between:0,99999999|numeric',
+        'precio_venta' => 'required|between:0,99999999|numeric',
+        'existencia' => 'required|between:0,99999999|integer',
+        'stock_minimo' => 'required|between:0,99999999|integer']);
+
+        $Producto->proveedor_id=$request->proveedor;
+        $Producto->categoria_id=$request->categoria;
+        $Producto->user_id=Auth::id();
+        $Producto->codigo_barras=$request->codigo_barras;
+        $Producto->descripcion=$request->descripcion;
+        $Producto->costo_compra=$request->costo_compra;
+        $Producto->precio_venta=$request->precio_venta;
+        $Producto->existencia=$request->existencia;
+        $Producto->stock_minimo=$request->stock_minimo;
+
+        $Producto->save();
+        
+
+        return redirect ("/productos");
     }
 
     /**
@@ -64,7 +89,6 @@ class ProductosController extends Controller
      */
     public function show($id)
     {
-        //
         
     }
 
@@ -76,8 +100,11 @@ class ProductosController extends Controller
      */
     public function edit($id)
     {
-        //
-        
+        $categorias=User::find(Auth::id())->categorias;
+        $proveedores=User::find(Auth::id())->proveedores;
+        $Producto=Producto::findOrFail($id);
+
+        return view("productos.edit", compact("categorias", "proveedores","Producto"));
     }
 
     /**
@@ -89,7 +116,19 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,
+        ['codigo_barras' => 'required|numeric|unique:productos,codigo_barras',
+        'descripcion' => 'required',
+        'costo_compra' => 'required|between:0,99999999|numeric',
+        'precio_venta' => 'required|between:0,99999999|numeric',
+        'existencia' => 'required|between:0,99999999|integer',
+        'stock_minimo' => 'required|between:0,99999999|integer']);
+
+        $Producto=Producto::findOrFail($id);
+
+        $Producto->update($request->all());
+
+        return redirect("/productos");
     }
 
     /**
@@ -100,6 +139,10 @@ class ProductosController extends Controller
      */
     public function destroy($id)
     {
-        
+        $Producto=Producto::findOrFail($id);
+
+        $Producto->delete();
+
+        return redirect("/productos");
     }
 }

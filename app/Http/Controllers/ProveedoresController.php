@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\MessageBag;
 
 use App\Proveedor;
 use App\User;
+use App\Producto;
 
 class ProveedoresController extends Controller
 {
@@ -50,9 +52,9 @@ class ProveedoresController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['razon_social'=>'required']);
-        $this->validate($request, ['telefono'=>'required']);
-        $this->validate($request, ['mail'=>'required']);
+        $this->validate($request, ['razon_social'=>['bail','required','regex:/^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([0-9a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/']]);
+        $this->validate($request, ['telefono'=>['bail','required','numeric','unique:proveedores']]);
+        $this->validate($request, ['mail'=>['bail','required','email','unique:proveedores']]);
 
         $Proveedor= new Proveedor;
         
@@ -89,8 +91,9 @@ class ProveedoresController extends Controller
     public function edit($id)
     {
         $proveedor = Proveedor::findOrFail($id);
+        $hijos = Producto::where('proveedor_id', $id)->count();
 
-        return view("proveedores.edit", compact("proveedor"));
+        return view("proveedores.edit", compact("proveedor", "hijos"));
     }
 
     
@@ -103,9 +106,9 @@ class ProveedoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, ['razon_social'=>'required']);
-        $this->validate($request, ['telefono'=>'required']);
-        $this->validate($request, ['mail'=>'required']);
+        $this->validate($request, ['razon_social'=>['bail','required','regex:/^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([0-9a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/']]);
+        $this->validate($request, ['telefono'=>['bail','required','numeric','unique:proveedores']]);
+        $this->validate($request, ['mail'=>['bail','required','email','unique:proveedores']]);
 
         $proveedor=Proveedor::findOrFail($id);
 
@@ -120,12 +123,12 @@ class ProveedoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
+        //$hijos = Producto::where('proveedor_id', $id)->count();
+
         $proveedor=Proveedor::findOrFail($id);
-
         $proveedor->delete();
-
         return redirect("/proveedores");
     }
 }

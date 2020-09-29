@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Categoria;
 use App\User;
 
+use App\Producto;
+
 class CategoriasController extends Controller
 {
     /**
@@ -85,8 +87,9 @@ class CategoriasController extends Controller
     public function edit($id)
     {
         $categoria=Categoria::findOrFail($id);
+        $hijos = Producto::where('proveedor_id', $id)->count();
 
-        return view("categorias.edit", compact("categoria"));
+        return view("categorias.edit", compact("categoria", "hijos"));
     }
 
     
