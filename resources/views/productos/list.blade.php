@@ -40,6 +40,13 @@ REGISTRO DE PRODUCTOS
 
     <div class="container mt-5">
         <div class="row">
+            <div  class="col-12"> 
+            <a href="{{route('productos.create')}}"> <input class="boton btn btn-primary" type="button"  name="nuevo" value="Nuevo" ></a>
+            </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
             <div class="col-12">
                 <a href="{{route('productos.index')}}" class="float-right">
                     <input type="button" value="Volver" class="boton btn btn-primary"><br><br>
