@@ -59,6 +59,7 @@ EDITAR PRODUCTOS
                 <input type="submit" name="enviar" value="Actualizar" class="boton btn btn-primary">
             </form>
 
+            <br>
             <form   method="post" action="/productos/{{$Producto->id}}">
                 {{csrf_field()}} 
                 <input type="hidden" name="_method" value="DELETE">
