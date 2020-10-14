@@ -117,7 +117,7 @@ class ProductosController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,
-        ['codigo_barras' => 'required|numeric|unique:productos,codigo_barras',
+        ['codigo_barras' => 'required|numeric',
         'descripcion' => 'required',
         'costo_compra' => 'required|between:0,99999999|numeric',
         'precio_venta' => 'required|between:0,99999999|numeric',
