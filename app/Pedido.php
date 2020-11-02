@@ -11,4 +11,8 @@ class Pedido extends Model
         "proveedor_id",
         "costo_total"
     ];
+
+    public function pedido_items(){
+        return $this->hasMany("App\PedidoItem");
+    }
 }

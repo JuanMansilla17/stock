@@ -22,7 +22,7 @@ INICIO
                         </div>
                     </li>
                     
-                    <li class="nav-item"><a href="pedidos/registro de pedidos.html" class="texto nav-link disabled" >Pedidos</a></li>
+                    <li class="nav-item"><a href="{{route('pedidos.index')}}" class="texto nav-link" >Pedidos</a></li>
                     <li class="nav-item"><a href="/ingreso" class="texto nav-link" >Ingreso de mercadería</a></li>
                     <li class="nav-item"><a href="/egreso" class="texto nav-link">Egreso de mercadería</a></li>
 

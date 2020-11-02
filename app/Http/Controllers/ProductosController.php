@@ -29,7 +29,10 @@ class ProductosController extends Controller
     }
 
     public function list(Request $request){
-        $productosBuscados = Producto::where('categoria_id', $request->input('categoria'))->where('proveedor_id', $request->input('proveedor'))->get();
+        $productosBuscados = Producto::where('user_id', Auth::id())
+        ->where('categoria_id', $request->input('categoria'))
+        ->where('proveedor_id', $request->input('proveedor'))
+        ->get();
 
         return view("productos.list", compact("productosBuscados"));
     }
