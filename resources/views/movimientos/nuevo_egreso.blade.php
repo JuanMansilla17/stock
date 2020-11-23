@@ -18,12 +18,12 @@ NUEVO EGRESO
                     <label class="texto">{{$producto->first()->codigo_barras}}</label>
                 </div>
                 <div>
-                    <label class="texto">Descripcion: </label>
+                    <label class="texto">Descripción: </label>
                     <label class="texto">{{$producto->first()->descripcion}}</label>
                 </div>
                 <div>
-                    <label class="texto">Cantidad Ingresada</label>
-                    <input type="number" name="cantidad" class="form-control">
+                    <label class="texto">Cantidad Ingresada: {{$cantidad}}</label>
+                    <input type="hidden" name="cantidad" value="{{$cantidad}}">
                 </div>
                 <div>
                     <input type="hidden" name="id" value="{{$producto->first()->id}}">

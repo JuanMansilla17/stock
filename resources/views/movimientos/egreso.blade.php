@@ -12,8 +12,15 @@ EGRESO DE MERCADERÍA
         <div class="col">
             <form action="/egreso/nuevo_egreso" method="POST">
                 @csrf
-                <label class="texto">Código</label> 
-                <input type="text" name="codigo_barras" class="form-control">
+                <div>
+                    <label class="texto">Código</label> 
+                    <input type="text" name="codigo_barras" class="form-control">
+                </div>
+                <div>
+                    <label class="texto">Cantidad</label> 
+                    <input type="number" name="cantidad" class="form-control">
+                </div>
+                
                 <input type="submit" value="Agregar" class="boton btn btn-primary">
             </form>
         </div>

@@ -57,8 +57,5 @@ REGISTRO DE PEDIDOS
 </div>
 @endsection
 
-
-
-
 @section("pie")
 @endsection

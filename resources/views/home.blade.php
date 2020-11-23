@@ -12,7 +12,7 @@ INICIO
             <div class="col-12">
 
                 
-                <!--FALTA ASIGNAR LAS RUTAS HACIA LAS DEMAS VISTAS-->
+                
                 <ul class="nav flex-column">
                     <li class="nav-item dropdown"><a href="#" class="texto nav-link dropdown-toggle" data-toggle="dropdown">Stock</a>
                         <div class="dropdown-menu">
@@ -23,14 +23,14 @@ INICIO
                     </li>
                     
                     <li class="nav-item"><a href="{{route('pedidos.index')}}" class="texto nav-link" >Pedidos</a></li>
-                    <li class="nav-item"><a href="/ingreso" class="texto nav-link" >Ingreso de mercadería</a></li>
+                    <!--<li class="nav-item"><a href="/ingreso" class="texto nav-link" >Ingreso de mercadería</a></li>-->
                     <li class="nav-item"><a href="/egreso" class="texto nav-link">Egreso de mercadería</a></li>
 
-                    <li class="nav-item dropdown"><a href="#" class="texto nav-link dropdown-toggle" data-toggle="dropdown">Estadísticas</a>
+                    <!--<li class="nav-item dropdown"><a href="#" class="texto nav-link dropdown-toggle" data-toggle="dropdown">Estadísticas</a>
                         <div class="dropdown-menu">
                             <a href="estadisticas/ventas.html" class="dropdown-item disabled">Productos más vendidos</a>
                         </div>
-                    </li>
+                    </li>-->
 
                     <li class="nav-item dropdown"><a href="#" class="texto nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}</a>
                         <div class="dropdown-menu">

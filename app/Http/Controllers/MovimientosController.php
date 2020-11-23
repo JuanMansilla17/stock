@@ -28,14 +28,14 @@ class MovimientosController extends Controller
     }
 
     public function egreso(){
-        
         return view("movimientos.egreso");
     }
 
     public function nuevo_egreso(Request $request){
         $producto = Producto::where('codigo_barras', $request->input('codigo_barras'))->get();
+        $cantidad = $request->cantidad;
 
-        return view("movimientos.nuevo_egreso", compact("producto"));
+        return view("movimientos.nuevo_egreso", compact("producto","cantidad"));
     }
 
     public function actualizar_egreso(Request $request){
