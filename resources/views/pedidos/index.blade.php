@@ -23,7 +23,12 @@ PEDIDOS
 </div>
 
 
-NUEVO PEDIDO
+<div class="container mt-5">
+    <div class="row">
+        <div  class="col-12"> 
+        <a href="{{route('pedidos.create')}}"> <input class="boton btn btn-primary" type="button"  name="nuevo" value="Nuevo pedido" ></a>
+        </div>
+</div>
 
 <div class="container mt-5">
     <div class="row">

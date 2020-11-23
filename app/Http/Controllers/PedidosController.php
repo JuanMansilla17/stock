@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 use App\Pedido;
+use App\Producto;
 use App\Proveedor;
 use App\PedidoItem;
 use App\User;
@@ -61,18 +62,41 @@ class PedidosController extends Controller
     }
 
     public function select(Request $request){
-        $productos = Productos::where('user_id', Auth::id())
+        $this->validate($request,
+            [
+                'fecha' => 'required',
+                'proveedor' => 'required'
+            ]);
+        
+        $pedido = new Pedido;
+
+        $pedido->proveedor_id = $request->input('proveedor');
+        $pedido->fecha = $request->input('fecha');
+
+        $productos = User::find(Auth::id())->productos
+        ->where('user_id', Auth::id())
         ->where('proveedor_id', $request->input('proveedor'));
 
-        return view("pedidos.select", compact("productos"));
+        return view("pedidos.select", compact("productos", "pedido"));
     }
 
     public function items(Request $request){
-        foreach($request->producto as $producto){
-            $productos = $productos->addSelect(Producto::where('id_user', Auth::id())->find($producto));
+        $productos = array();
+        $productos_seleccionados = $request->productos;
+
+        $i=0;
+        foreach($productos_seleccionados as $producto_id){
+            
+            $producto = Producto::find($producto_id);
+            $productos[$i] = $producto;
+            $i++;
         }
 
-        return view("pedidos.items", compact("productos"));
+        $pedido = new Pedido;
+        $pedido->proveedor_id = $request->input('proveedor');
+        $pedido->fecha = $request->input('fecha');
+
+        return view("pedidos.items", compact("productos", "pedido"));
     }
 
     /**
@@ -84,13 +108,12 @@ class PedidosController extends Controller
     public function store(Request $request)
     {
         //validar pedido
-        $this->validate($request,
+        /*$this->validate($request,
             [
                 'fecha' => 'required',
                 'costo_total' => 'required',
                 'proveedor' => 'required'
-            ]
-        );
+            ]);*/
         
         //guardar pedido
         $pedido = new Pedido;
@@ -102,25 +125,28 @@ class PedidosController extends Controller
 
         $pedido->save();
 
-        $pedido_id = Pedido::lastest('id')->first();
-
+        //$pedido_id = Pedido::lastest('id')->first();
+        $pedido_id= Pedido::all()->last()->id;
+        
         $productos = $request->input('productos');
         
         //recorrer cada item
         $posicion = 0;
-        foreach($request->productos as $producto){
+        foreach($productos as $producto){
             //validar cantidad pedido
-            $this->validate($request,
+            /*$this->validate($request,
                 [
                     'cantidades' . $posicion => 'required'
                 ]
-            );
+            );*/
 
             //guardar item pedido
             $pedido_item = new PedidoItem;
 
-            $pedido_item->cantidad = $request->cantidades.$posicion;
-            $pedido_item->costo = $request->costo;
+            //$pedido_item->cantidad = $request->cantidades.$posicion;
+            $pedido_item->cantidad = $request->input('cantidades')[$posicion];
+            //$pedido_item->costo = $request->subtotales.$posicion;
+            $pedido_item->costo = $request->input('subtotales')[$posicion];
             $pedido_item->producto_id = $producto;
             $pedido_item->pedido_id = $pedido_id;
             $pedido_item->user_id = Auth::id();
