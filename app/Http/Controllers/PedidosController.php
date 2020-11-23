@@ -121,13 +121,13 @@ class PedidosController extends Controller
         $pedido->fecha = $request->fecha;
         $pedido->costo_total = $request->costo_total;
         $pedido->proveedor_id = $request->proveedor;
+        $pedido->estado = "solicitado";
         $pedido->user_id=Auth::id();
 
         $pedido->save();
 
-        //$pedido_id = Pedido::lastest('id')->first();
         $pedido_id= Pedido::all()->last()->id;
-        
+
         $productos = $request->input('productos');
         
         //recorrer cada item
@@ -190,7 +190,19 @@ class PedidosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pedido_items = Pedido::findOrFail($id)->pedido_items;
+        
+        foreach($pedido_items as $pedido_item){
+            $producto = Producto::findOrFail($pedido_item->producto_id);
+            $producto->existencia += $pedido_item->cantidad;
+            $producto->save();
+        }
+
+        $pedido = Pedido::findOrFail($id);
+        $pedido->estado = "recibido";
+        $pedido->save();
+
+        return redirect ("/pedidos");
     }
 
     /**

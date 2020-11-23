@@ -9,7 +9,8 @@ class Pedido extends Model
     protected $fillable = [
         "fecha",
         "proveedor_id",
-        "costo_total"
+        "costo_total",
+        "estado"
     ];
 
     public function pedido_items(){

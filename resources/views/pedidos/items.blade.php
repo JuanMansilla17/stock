@@ -55,7 +55,7 @@ FINALIZAR PEDIDO
                         <input type="number" id="costo_total" name="costo_total">
                     </p>
 
-                    <input type="submit" value="Guardar" class="boton btn btn-primary">
+                    <input type="hidden" id="guardar" value="Guardar" class="boton btn btn-primary">
                 </form>
             </div>
         </div>
@@ -87,6 +87,8 @@ function calcularTotal(){
         }
 
         document.getElementById("costo_total").value = total;
+
+        document.getElementById("guardar").type = "submit";
 
     }else{
         alert("Cantidades inválidas");
