@@ -2,7 +2,7 @@
 
 
 @section("cabecera")
-INICIAR SESIÓN
+Iniciar sesión
 @endsection
 
 

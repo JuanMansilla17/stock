@@ -1,7 +1,7 @@
 @extends('layouts.plantilla')
 
 @section("cabecera")
-CREAR USUARIO
+Crear usuario
 @endsection
 
 

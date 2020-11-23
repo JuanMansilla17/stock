@@ -2,7 +2,7 @@
 
 @section("cabecera")
 
-AGREGAR CATEGORÍA
+Agregar categoría
 
 @endsection
 

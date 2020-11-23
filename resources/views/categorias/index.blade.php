@@ -1,7 +1,7 @@
 @extends("../layouts.plantilla")
 
 @section("cabecera")
-LISTA DE CATEGORÍAS
+Lista de categorías
 @endsection
 
 

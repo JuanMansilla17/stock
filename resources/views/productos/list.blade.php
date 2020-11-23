@@ -1,7 +1,7 @@
 @extends("../layouts.plantilla")
 
 @section("cabecera")
-REGISTRO DE PRODUCTOS
+Registro de productos
 @endsection
 
 @section ("contenido")
@@ -11,13 +11,13 @@ REGISTRO DE PRODUCTOS
                 <div class="scrollable">
                     <table class="table table-striped table-bordered table-hover table-fixed table-dark">
                         <thead>
-                            <th>CÓDIGO</th>
-                            <th>DESCRIPCIÓN</th>
-                            <th>COSTO DE COMPRA</th>
-                            <th>PRECIO DE VENTA</th>
-                            <th>EXISTENCIA</th>
-                            <th>STOCK MÍNIMO</th>
-                            <th>PROVEEDOR</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Costo de compra</th>
+                            <th>Precio de venta</th>
+                            <th>Existencia</th>
+                            <th>Stock mínimo</th>
+                            <th>Proveedor</th>
                         </thead>
                         <tbody>
                             @foreach($productosBuscados as $producto)

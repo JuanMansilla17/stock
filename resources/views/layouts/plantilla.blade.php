@@ -29,7 +29,7 @@
 
         .titulo{
             color: white;
-            font-size: 50px;
+            font-size: 40px;
         }
 
         .texto{

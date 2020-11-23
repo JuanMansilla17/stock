@@ -2,7 +2,7 @@
 
 @section("cabecera")
 
- EDITAR PROVEEDORES
+ Editar proveedores
 
 @endsection
 

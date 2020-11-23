@@ -11,7 +11,7 @@
 
         background-color: blue;
         text-align:center;
-        font-size: 50px;
+        font-size: 40px;
         margin-botton:100px;
     }
     .contenido form{

@@ -1,7 +1,7 @@
 @extends("../layouts.plantilla")
 
 @section("cabecera")
-BUSCAR PRODUCTOS
+Buscar productos
 @endsection
 
 
@@ -10,7 +10,7 @@ BUSCAR PRODUCTOS
 <section>
     <form action="/productos/list" method="GET">
 
-        <div>
+        <div class="container mt-5">
             <label for="categoria" class="texto">Seleccione una categoría</label>
             <select name="categoria" class="form-control">
                 @foreach($categorias as $categoria)
