@@ -1,7 +1,7 @@
 @extends("../layouts/plantilla")
 
 @section("cabecera")
-EGRESO DE MERCADERÍA
+Egreso de mercadería
 @endsection
 
 

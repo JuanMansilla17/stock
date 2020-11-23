@@ -1,7 +1,7 @@
 @extends("../layouts.plantilla")
 
 @section("cabecera")
-REGISTRO DE PRODUCTOS
+Registro de productos
 @endsection
 
 @section ("contenido")

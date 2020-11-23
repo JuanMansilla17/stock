@@ -1,7 +1,7 @@
 @extends ("../layouts.plantilla")
 
 @section("cabecera")
-AGREGAR PRODUCTOS
+Agregar productos
 @endsection
 
 

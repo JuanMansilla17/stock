@@ -1,7 +1,7 @@
 @extends ("../layouts.plantilla")
 
 @section("cabecera")
-EDITAR PRODUCTOS
+Editar productos
 @endsection
 
 

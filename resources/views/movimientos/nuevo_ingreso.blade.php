@@ -2,7 +2,7 @@
 
 
 @section("cabecera")
-NUEVO INGRESO
+Nuevo ingreso
 @endsection
 
 

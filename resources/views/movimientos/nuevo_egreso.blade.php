@@ -2,7 +2,7 @@
 
 
 @section("cabecera")
-NUEVO EGRESO
+Nuevo egreso
 @endsection
 
 
