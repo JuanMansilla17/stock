@@ -25,7 +25,7 @@ Agregar proveedores
                 </div>
                 {{csrf_field()}}
                 
-                <input type="submit" name="enviar" value="Enviar" class="boton btn btn-primary"> 
+                <input type="submit" name="enviar" value="Enviar" class="boton btn btn-primary" onclick="return confirm('¿Estas seguro?')> 
             </form>
         </div>
     </div>

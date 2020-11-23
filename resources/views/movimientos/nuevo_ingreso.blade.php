@@ -29,7 +29,7 @@ Nuevo ingreso
                     <input type="hidden" name="id" value="{{$producto->first()->id}}">
                 </div>
                 <div>
-                    <input type="submit" class="boton btn btn-primary" value="ACTUALIZAR">
+                    <input type="submit" class="boton btn btn-primary" onclick="return confirm('¿Estas seguro?') value="Actualizar">
                 </div>
             </form>
         </div>

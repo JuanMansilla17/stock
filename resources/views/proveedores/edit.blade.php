@@ -29,14 +29,14 @@
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="PUT">
 
-                <input type="submit" name="enviar" value="Actualizar" class="boton btn btn-primary">
+                <input type="submit" name="enviar" value="Actualizar" class="boton btn btn-primary" onclick="return confirm('¿Estas seguro?')>
             </form>
             <br>
             <form id="formulario_eliminar" method="POST" action="/proveedores/{{$proveedor->id}}">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="DELETE">
                 @if($hijos == 0)
-                    <input id='eliminar' type="submit" value="Eliminar registro" class="boton btn btn-danger">
+                    <input id='eliminar' type="submit" value="Eliminar registro" class="boton btn btn-danger" onclick="return confirm('¿Estas seguro?')>
                 @else
                     <input id='eliminar' disabled="true" type="submit" value="Eliminar registro" class="boton btn btn-danger">
                     <p class="texto">Este proveedor no puede ser eliminado porque tiene productos asociados.</p>

@@ -29,7 +29,7 @@ Lista de proveedores
     <div class="container mt-5">
         <div class="row">
             <div  class="col-12"> 
-            <a href="{{route('proveedores.create')}}"> <input class="boton btn btn-primary" type="button"  name="nuevo" value="Nuevo" ></a>
+            <a href="{{route('proveedores.create')}}"> <input class="boton btn btn-primary" type="button"  name="nuevo" value="Nuevo" onclick="return confirm('¿Estas seguro?')></a>
             </div>
     </div> 
 

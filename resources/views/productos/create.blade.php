@@ -50,7 +50,7 @@ Agregar productos
                 <input type="number" name="stock_minimo" class="form-control">
                
 
-                <input type="submit" name="enviar" value="Enviar" class="boton btn btn-primary"> 
+                <input type="submit" name="enviar" value="Enviar" class="boton btn btn-primary" onclick="return confirm('¿Estas seguro?')> 
             </form>
         </div>
     </div>

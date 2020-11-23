@@ -56,7 +56,7 @@ Editar productos
                
                 <input type="hidden" name="_method" value="PUT">
 
-                <input type="submit" name="enviar" value="Actualizar" class="boton btn btn-primary">
+                <input type="submit" name="enviar" value="Actualizar" class="boton btn btn-primary" onclick="return confirm('¿Estas seguro?')>
             </form>
 
             <form   method="post" action="/productos/{{$Producto->id}}">

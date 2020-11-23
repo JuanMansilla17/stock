@@ -13,8 +13,8 @@ Egreso de mercadería
             <form action="/egreso/nuevo_egreso" method="POST">
                 @csrf
                 <label class="texto">Código</label> 
-                <input type="text" name="codigo_barras" class="form-control">
-                <input type="submit" value="Agregar" class="boton btn btn-primary">
+                <input type="text" name="codigo_barras" class="form-control"> 
+                <input type="submit" value="Agregar" class="boton btn btn-primary" onclick="return confirm('¿Estas seguro?')>
             </form>
         </div>
     </div>
