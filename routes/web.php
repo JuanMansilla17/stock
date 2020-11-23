@@ -20,18 +20,23 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('/categorias', 'CategoriasController');
-Route::resource('/proveedor', 'ProveedoresController');
+Route::resource('/proveedores', 'ProveedoresController');
 
 Route::get('/productos/list', 'ProductosController@list');
 Route::resource('/productos', 'ProductosController');
 
-
 Route::get('/home', 'HomeController@index')->name('home');
 
-/*Route::get('/categorias','CategoriasController@categorias');
+//Movimientos
+Route::get('/ingreso', 'MovimientosController@ingreso')->name('ingreso');
+Route::post('/ingreso/nuevo_ingreso', 'MovimientosController@nuevo_ingreso');
+Route::post('/ingreso/actualizar_ingreso', 'MovimientosController@actualizar_ingreso');
 
-Route::get('/crear','CategoriasController@create');*/
+Route::get('/egreso', 'MovimientosController@egreso');
+Route::post('/egreso/nuevo_egreso', 'MovimientosController@nuevo_egreso');
+Route::post('/egreso/actualizar_egreso', 'MovimientosController@actualizar_egreso');
 
-Route::get('/proveedor','ProveedoresController@proveedor');
 
-Route::get('/crear','ProvedoresController@create');
+/*Route::get('/proveedor','ProveedoresController@proveedor');
+
+Route::get('/crear','ProvedoresController@create');*/

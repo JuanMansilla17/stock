@@ -39,6 +39,16 @@ Buscar productos
             <input type="submit" value="Buscar" class="boton btn btn-primary">
         </div>
     </form>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <a href="{{route('home')}}" class="float-right">
+                    <input type="button" value="Volver al menú" class="boton btn btn-primary"><br><br>
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
 
 @endsection

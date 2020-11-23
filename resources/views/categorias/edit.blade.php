@@ -25,7 +25,13 @@
             <form  method="post" action="/categorias/{{$categoria->id}}">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="DELETE">
-                <input type="submit" value="Eliminar registro" class="boton btn btn-danger">
+                @if($hijos == 0)
+                    <input type="submit" value="Eliminar registro" class="boton btn btn-danger">
+                @else
+                    <input type="submit" disabled="true" value="Eliminar registro" class="boton btn btn-danger">
+                    <p class="texto">Esta categoría no puede ser eliminada porque tiene productos asociados.</p>
+                @endif
+                
             </form>
         </div>
     </div>

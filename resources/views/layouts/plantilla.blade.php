@@ -7,7 +7,8 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <!--<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
     
     <script type="text/javascript">
 
@@ -15,7 +16,8 @@
             document.querySelectorAll('[name=Tipo]').forEach((x) => x.checked = false);
         }
     </script>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script> 
     <style>
         .iniciar{
             font-size: 3vw;
@@ -56,6 +58,7 @@
     </style>
 </head>
 <body>
+
     <div class="cabecera">
         <header class="container-fluid bg-primary">
             <div class="row">

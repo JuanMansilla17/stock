@@ -15,6 +15,8 @@ Lista de proveedores
                         @foreach($proveedores as $proveedor)
                             <tr>
                                 <td><a style="color:white" href="{{route('proveedores.edit', $proveedor->id)}}"> {{$proveedor->razon_social}}</a></td>
+                                <td><a style="color:white" href="{{route('proveedores.edit', $proveedor->id)}}"> {{$proveedor->telefono}}</a></td>
+                                <td><a style="color:white" href="{{route('proveedores.edit', $proveedor->id)}}"> {{$proveedor->mail}}</a></td>
                             </tr>
                         @endforeach
                         </tbody> 
@@ -43,6 +45,7 @@ Lista de proveedores
         </div>
     </div>
  
+
 @endsection
 
 @section("pie")
