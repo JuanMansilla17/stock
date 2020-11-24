@@ -31,6 +31,12 @@ NUEVO PEDIDO
                 </form>
             </div>
 
+            @if(count($errors)>0)
+                @foreach($errors->all() as $error)
+                    <p class="mensajeError">{{$error}}</p>
+                @endforeach
+            @endif
+
             <div class="container mt-5">
                 <div class="row">
                     <div class="col-12">

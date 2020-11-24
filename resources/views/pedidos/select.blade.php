@@ -50,6 +50,16 @@ SELECCIONAR PRODUCTOS
                         <input type="submit" class="boton btn btn-primary" value="FINALIZAR SELECCIÓN">
                     </div>
 
+                    @if($productos->count()==0)
+                        <p class="mensajeError">Este proveedor no tiene ningún producto asociado</p>
+                    @endif
+
+                    @if(count($errors)>0)
+                        @foreach($errors->all() as $error)
+                            <p class="mensajeError">{{$error}}</p>
+                        @endforeach
+                    @endif
+
                     <div class="container mt-5">
                         <div class="row">
                             <div class="col-12">

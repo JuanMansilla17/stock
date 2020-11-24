@@ -24,6 +24,9 @@ Agregar categoría
     </div>
 </div>
 
+<div >
+
+</div>
 @if(count($errors)>0)
     @foreach($errors->all() as $error)
         <p class="mensajeError">{{$error}}</p>

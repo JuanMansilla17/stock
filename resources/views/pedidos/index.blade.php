@@ -24,6 +24,12 @@ PEDIDOS
                 
                 <input type="submit" value="BUSCAR" class="btn btn-primary boton">
             </form>
+
+            @if(count($errors)>0)
+                @foreach($errors->all() as $error)
+                    <p class="mensajeError">{{$error}}</p>
+                @endforeach
+            @endif
         </div>
     </div>
 </div>

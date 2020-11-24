@@ -34,6 +34,10 @@ Registro de productos
                         </tbody>
                     </table>
                 </div>
+                @if($productosBuscados->count()==0)
+                    <p class="mensajeError">No hay nungún producto registrado para este proveedor y categoría</p>
+                @endif
+
             </div>
         </div>
     </div>
@@ -44,6 +48,8 @@ Registro de productos
             <a href="{{route('productos.create')}}"> <input class="boton btn btn-primary" type="button"  name="nuevo" value="NUEVO" ></a>
             </div>
     </div>
+
+
 
     <div class="container mt-5">
         <div class="row">

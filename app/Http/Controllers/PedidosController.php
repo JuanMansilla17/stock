@@ -30,6 +30,12 @@ class PedidosController extends Controller
     }
 
     public function list(Request $request){
+        $this->validate($request, [
+            'desde'=>'required',
+            'hasta'=>'required',
+            'hasta'=>'after_or_equal:desde'
+            ]);
+
         $pedidos = Pedido::where('user_id', Auth::id())
         ->where('fecha', '>=', $request->input('desde'))
         ->where('fecha', '<=', $request->input('hasta'))
@@ -81,6 +87,11 @@ class PedidosController extends Controller
     }
 
     public function items(Request $request){
+        $this->validate($request,
+            [
+                'productos' => 'required'
+            ]);
+
         $productos = array();
         $productos_seleccionados = $request->productos;
 

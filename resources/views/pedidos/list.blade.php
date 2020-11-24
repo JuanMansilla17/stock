@@ -53,6 +53,12 @@ REGISTRO DE PEDIDOS
                 </table>
             </div>
 
+            
+            @if($pedidos->count()==0)
+                <p class="mensajeError">No hay ningún pedido registrado entre las fechas indicadas</p>
+            @endif
+            
+
             <div class="container mt-5">
                 <div class="row">
                     <div class="col-12">
