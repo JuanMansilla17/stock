@@ -10,14 +10,16 @@ PEDIDOS
     <div class="row">
         <div class='col-12'>
             <form action="/pedidos/list" method="GET">
-                <div class="campo">
-                    <label class="texto">Desde:</label>
-                    <input type="date" name="desde" class="form-control">
-                </div>
-                
-                <div class="campo">
-                    <label class="texto">Hasta:</label> 
-                    <input type="date" name="hasta" class="form-control">
+                <div class="row">
+                    <div class="campo col-sm-12 col-md-4 campo">
+                        <label class="texto">Desde:</label>
+                        <input type="date" name="desde" class="form-control">
+                    </div>
+                    
+                    <div class="campo col-sm-12 col-md-4 campo">
+                        <label class="texto">Hasta:</label> 
+                        <input type="date" name="hasta" class="form-control">
+                    </div>
                 </div>
                 
                 <input type="submit" value="BUSCAR" class="btn btn-primary boton">

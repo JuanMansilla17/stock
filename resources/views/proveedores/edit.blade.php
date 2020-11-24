@@ -13,35 +13,39 @@
     <div class="row">
         <div  class="col-12"> 
             <form action="/proveedores/{{$proveedor->id}}" method="POST">
-                <div class="campo">
-                    <label class="texto">Razón social:</label>
-                    <input type="text" name="razon_social" class="form-control" value="{{$proveedor->razon_social}}">
+                <div class="row">
+                    <div class="campo campo col-sm-12 col-md-6">
+                        <label class="texto">Razón social:</label>
+                        <input type="text" name="razon_social" class="form-control" value="{{$proveedor->razon_social}}">
+                    </div>
                 </div>
-                <div class="campo">
-                    <label class="texto">Teléfono:</label>
-                    <input type="text" name="telefono" class="form-control" value="{{$proveedor->telefono}}">
+
+                <div class="row">
+                    <div class="campo col-sm-12 col-md-4">
+                        <label class="texto">Teléfono:</label>
+                        <input type="text" name="telefono" class="form-control" value="{{$proveedor->telefono}}">
+                    </div>
+
+                    <div class="campo col-sm-12 col-md-6">
+                        <label class="texto">Mail:</label>
+                        <input type="email" name="mail" class="form-control" value="{{$proveedor->mail}}">
+                    </div>
                 </div>
-                <div class="campo">
-                    <label class="texto">Mail:</label>
-                    <input type="email" name="mail" class="form-control" value="{{$proveedor->mail}}">
-                </div>
-                
+
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="PUT">
 
                 <input type="submit" name="enviar" value="ACTUALIZAR" class="boton btn btn-success">
             </form>
-            <br>
+
             <form id="formulario_eliminar" method="POST" action="/proveedores/{{$proveedor->id}}">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="DELETE">
                 @if($hijos == 0)
-                    <input id='ELIMINAR' type="submit" value="Eliminar registro" class="boton btn btn-danger">
+                    <input id='ELIMINAR' type="submit" value="ELIMINAR" class="boton btn btn-danger">
                 @else
                     <p class="mensajeError">Este proveedor no puede ser eliminado porque tiene productos asociados.</p>
                 @endif
-                
-                
             </form>
         </div>
     </div>

@@ -11,15 +11,18 @@ Egreso de mercadería
     <div class="row">
         <div class="col">
             <form action="/egreso/nuevo_egreso" method="POST">
-                @csrf
-                <div class="campo">
-                    <label class="texto">Código</label> 
-                    <input type="text" name="codigo_barras" class="form-control">
+                <div class="row">
+                    @csrf
+                    <div class="campo col-sm-12 col-md-4 campo">
+                        <label class="texto">Código</label> 
+                        <input type="text" name="codigo_barras" class="form-control">
+                    </div>
+                    <div class="campo col-sm-12 col-md-4 campo">
+                        <label class="texto">Cantidad</label> 
+                        <input type="number" name="cantidad" class="form-control">
+                    </div>
                 </div>
-                <div class="campo">
-                    <label class="texto">Cantidad</label> 
-                    <input type="number" name="cantidad" class="form-control">
-                </div>
+                
                 
                 <input type="submit" value="AGREGAR" class="boton btn btn-primary">
             </form>

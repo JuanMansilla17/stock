@@ -14,10 +14,10 @@ Agregar categoría
         <div  class="col-12"> 
             <form action="/categorias" method="POST" id="formulario">
                 <label class="texto" for="nuevaCategoria">Nueva Categoría:</label>
-                <input type="text" name="descripcion" class="form-control">
+                <input type="text" name="descripcion" class="form-control col-sm-12 col-md-6">
                 {{csrf_field()}}
 
-                <button class="boton btn btn-success" onclick="confirmar()")>AGREGAR</button>
+                <button class="boton btn btn-success")>AGREGAR</button>
                 <!--<input type="submit" name="enviar" value="Enviar" class="boton btn btn-primary" onclick="return confirm('¿Estas seguro?')>-->
             </form>
         </div>

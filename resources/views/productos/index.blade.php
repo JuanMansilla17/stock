@@ -13,23 +13,24 @@ Buscar productos
         <div  class="col-12"> 
             <form action="/productos/list" method="GET">
 
-                <div class="campo">
-                    <label for="categoria" class="texto">Seleccione una categoría</label>
-                    <select name="categoria" class="form-control">
-                        @foreach($categorias as $categoria)
-                            <option value="{{$categoria->id}}">{{$categoria->descripcion}}</option>
-                        @endforeach
-                    </select>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 campo ">
+                        <label for="categoria" class="texto">Seleccione una categoría</label>
+                        <select name="categoria" class="form-control">
+                            @foreach($categorias as $categoria)
+                                <option value="{{$categoria->id}}">{{$categoria->descripcion}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-6 campo">
+                        <label for="proveedor" class="texto">Seleccione un proveedor</label>
+                        <select name="proveedor" class="form-control">
+                            @foreach($proveedores as $proveedor)
+                                <option value="{{$proveedor->id}}">{{$proveedor->razon_social}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
-                <div class="campo">
-                    <label for="proveedor" class="texto">Seleccione un proveedor</label>
-                    <select name="proveedor" class="form-control">
-                        @foreach($proveedores as $proveedor)
-                            <option value="{{$proveedor->id}}">{{$proveedor->razon_social}}</option>
-                        @endforeach
-                    </select>
-                </div>
-
 
                 <div>
                     <input type="submit" value="BUSCAR" class="boton btn btn-primary">
