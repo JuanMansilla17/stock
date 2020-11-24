@@ -1,7 +1,7 @@
 @extends ("../layouts.plantilla")
 
 @section("cabecera")
-EDITAR PRODUCTOS
+Editar productos
 @endsection
 
 
@@ -11,7 +11,7 @@ EDITAR PRODUCTOS
         <div  class="col-12"> 
             <form action="/productos/{{$Producto->id}}" method="POST">
                 {{csrf_field()}}
-                <div>
+                <div class="campo">
                     <label for="categoria" class="texto">Seleccione una categoría:</label>
                     <select name="categoria" class="form-control">
                         @foreach($categorias as $categoria)
@@ -23,7 +23,7 @@ EDITAR PRODUCTOS
                         @endforeach
                     </select>
                 </div>
-                <div>
+                <div class="campo">
                     <label for="proveedor" class="texto">Seleccione un proveedor:</label>
                     <select name="proveedor" class="form-control">
                         @foreach($proveedores as $proveedor)
@@ -36,35 +36,50 @@ EDITAR PRODUCTOS
                     </select>
                 </div>
 
-                <label class="texto" for="codigo">Codigo de barras:</label> 
-                <input type="text"name="codigo_barras"value="{{$Producto->codigo_barras}}" class="form-control"> 
+                <div class="campo">
+                    <label class="texto" for="codigo">Codigo de barras:</label> 
+                    <input type="text"name="codigo_barras"value="{{$Producto->codigo_barras}}" class="form-control"> 
+                </div>
 
-                <label class="texto" for="nuevoProducto">Descripcion:</label>
-                <input type="text" name="descripcion" value="{{$Producto->descripcion}}" class="form-control">
+                <div class="campo">
+                    <label class="texto" for="codigo">Codigo de barras:</label> 
+                    <input type="text"name="codigo_barras"value="{{$Producto->codigo_barras}}" class="form-control"> 
+                </div>
+                
+                <div class="campo">
+                    <label class="texto" for="nuevoProducto">Descripcion:</label>
+                    <input type="text" name="descripcion" value="{{$Producto->descripcion}}" class="form-control">
+                </div>
+                
+                <div class="campo">
+                    <label class="texto" for="nuevoProducto">Costo  de compra:</label>
+                    <input type="number" name="costo_compra" value="{{$Producto->costo_compra}}" class="form-control">
+                </div>
+                
+                <div class="campo">
+                    <label class="texto" for="nuevoProducto">Precio de venta:</label>
+                    <input type="number" name="precio_venta" value="{{$Producto->precio_venta}}"class="form-control">
+                </div>
 
-                <label class="texto" for="nuevoProducto">Costo  de compra:</label>
-                <input type="number" name="costo_compra" value="{{$Producto->costo_compra}}" class="form-control">
-
-                <label class="texto" for="nuevoProducto">Precio de venta:</label>
-                <input type="number" name="precio_venta" value="{{$Producto->precio_venta}}"class="form-control">
-
-                <label class="texto" for="nuevoProducto">Existencia:</label>
-                <input type="number" name="existencia"  value="{{$Producto->existencia}}"class="form-control">
-
-                <label class="texto" for="nuevoProducto">Stock minimo:</label>
-                <input type="number" name="stock_minimo" value="{{$Producto->stock_minimo}}" class="form-control">
-               
+                <div class="campo">
+                    <label class="texto" for="nuevoProducto">Existencia:</label>
+                    <input type="number" name="existencia"  value="{{$Producto->existencia}}"class="form-control">
+                </div>
+                
+                <div class="campo">
+                    <label class="texto" for="nuevoProducto">Stock minimo:</label>
+                    <input type="number" name="stock_minimo" value="{{$Producto->stock_minimo}}" class="form-control">
+                </div>
+                
                 <input type="hidden" name="_method" value="PUT">
 
-                <input type="submit" name="enviar" value="Actualizar" class="boton btn btn-primary">
+                <input type="submit" name="enviar" value="ACTUALIZAR" class="boton btn btn-success">
             </form>
 
-            <br>
             <form   method="post" action="/productos/{{$Producto->id}}">
                 {{csrf_field()}} 
                 <input type="hidden" name="_method" value="DELETE">
-                <br>
-                <input type="submit" class="boton btn btn-primary" name="eliminar registro" value="Eliminar registro">
+                <input type="submit" class="boton btn btn-danger" name="eliminar registro" value="ELIMINAR">
             </form>
             
 
@@ -81,12 +96,12 @@ EDITAR PRODUCTOS
     @endforeach
 @endif
 
-<br>
+
     <div class="container mt-5">
         <div class="row">
             <div class="col-12">
                 <a href="{{route('productos.index')}}" class="float-right">
-                    <input type="button" value="Volver" class="boton btn btn-primary"><br><br>
+                    <input type="button" value="Volver" class="boton btn btn-primary">
                 </a>
             </div>
         </div>

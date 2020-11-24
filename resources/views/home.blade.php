@@ -2,7 +2,7 @@
 
 
 @section("cabecera")
-INICIO
+Inicio
 @endsection
 
 

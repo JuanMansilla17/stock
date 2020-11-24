@@ -1,7 +1,7 @@
 @extends("../layouts/plantilla")
 
 @section("cabecera")
-INGRESO DE MERCADERÍA
+Ingreso de mercadería
 @endsection
 
 
@@ -14,7 +14,7 @@ INGRESO DE MERCADERÍA
                 @csrf
                 <label class="texto">Código</label> 
                 <input type="text" name="codigo_barras" class="form-control">
-                <input type="submit" value="Agregar" class="boton btn btn-primary">
+                <input type="submit" value="Agregar" class="boton btn btn-primary" onclick="return confirm('¿Estas seguro?')>
             </form>
         </div>
     </div>

@@ -12,12 +12,12 @@ FINALIZAR PEDIDO
             <div class="form-group">
                 <form action="/pedidos" method="POST">
                     {{csrf_field()}} 
-                    <div>
+                    <div class="campo">
                         <label class="texto">Proveedor</label>
                         <input type="text" value="{{App\Proveedor::find($pedido->proveedor_id)->razon_social}}" disabled>
                         <input type="hidden" value="{{$pedido->proveedor_id}}" name="proveedor">
                     </div>
-                    <div>
+                    <div class="campo">
                         <label class="texto">Fecha</label>
                         <input type="text" value="{{$pedido->fecha}}" disabled>
                         <input type="hidden" value="{{$pedido->fecha}}" name="fecha">
@@ -48,15 +48,25 @@ FINALIZAR PEDIDO
                         </table>
                     </div>
 
-                    <input type="button" class="boton btn btn-primary" value="Calcular total" onclick="calcularTotal()">
+                    <input type="button" class="boton btn btn-primary" value="CALCULAR TOTAL" onclick="calcularTotal()">
 
                     <p>
                         <label for="total" class="texto">Total: $</label>
                         <input type="number" id="costo_total" name="costo_total">
                     </p>
 
-                    <input type="hidden" id="guardar" value="Guardar" class="boton btn btn-primary">
+                    <input type="hidden" id="guardar" value="GUARDAR" class="boton btn btn-success">
                 </form>
+            </div>
+
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="{{route('pedidos.index')}}" class="float-right">
+                            <input type="button" value="CANCELAR" class="boton btn btn-danger">
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

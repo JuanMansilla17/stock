@@ -2,47 +2,54 @@
 
 
 @section("cabecera")
-INICIAR SESIÓN
+Iniciar sesión
 @endsection
 
 
 @section("contenido")
-<div class="container mt-5">
+<div class="container">
         <div class="row">
             <div class="col-12">
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
 
-                    <label for="email" class="texto">{{ __('Correo electrónico') }}</label>
-                    <div class="col-md-6">
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    <div class="campo">
+                        <label for="email" class="texto">{{ __('Correo electrónico') }}</label>
+                        <div class="col-md-6">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                        @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong class="mensajeError">{{ $message }}</strong>
-                            </span>
-                        @enderror
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong class="mensajeError">{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
                     </div>
 
+                    
 
-                    <label for="password" class="texto">{{ __('Contraseña') }}</label>
-                    <div class="col-md-6">
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
-                        @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong class="mensajeError">{{ $message }}</strong>
-                            </span>
-                        @enderror
+                    <div class="campo">
+                        <label for="password" class="texto">{{ __('Contraseña') }}</label>
+                        <div class="col-md-6">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong class="mensajeError">{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
                     </div>
+                    
 
 
-                    <div class="form-group row">
+                    <div class="form-group row" class="campo">
                         <div class="col">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                <label class="form-check-label" for="remember">
+                                <label class="form-check-label" for="remember" style="font-weight: bold; color: white; font-size: 20px;">
                                     {{ __('Recordarme') }}
                                 </label>
                             </div>
@@ -51,8 +58,8 @@ INICIAR SESIÓN
 
 
                     <div class="col">
-                        <button type="submit" class="btn btn-primary">
-                            {{ __('Ingresar') }}
+                        <button type="submit" class="btn btn-primary boton">
+                            {{ __('INGRESAR') }}
                         </button>
 
                         @if (Route::has('password.request'))

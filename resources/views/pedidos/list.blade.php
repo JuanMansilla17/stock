@@ -52,6 +52,16 @@ REGISTRO DE PEDIDOS
                     </tbody>
                 </table>
             </div>
+
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="{{route('pedidos.index')}}" class="float-right">
+                            <input type="button" value="Volver" class="boton btn btn-primary">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

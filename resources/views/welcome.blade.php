@@ -2,7 +2,7 @@
 
 
 @section("cabecera")
-SISTEMA DE CONTROL DE STOCK
+Sistema de control de stock
 @endsection
 
 
@@ -12,21 +12,21 @@ SISTEMA DE CONTROL DE STOCK
             @auth
                 <div class="row mt-5">
                     <div class="col-12 text-center h-50">
-                        <a class="iniciar" href="{{ url('/home') }}">MENÚ</a>
+                        <a class="iniciar" href="{{ url('/home') }}">Menu</a>
                     </div>
                 </div>
             @else
 
                 <div class="row mt-5">
                     <div class="col-12 text-center h-50">
-                        <a class="iniciar" href="{{ route('login') }}">INICIAR SESIÓN</a>
+                        <a class="iniciar" href="{{ route('login') }}">Iniciar sesión</a>
                     </div>
                 </div>
 
                 @if (Route::has('register'))
                     <div class="row mt-5">
                         <div class="col-12 text-center ">
-                            <a class="iniciar" href="{{ route('register') }}">CREAR USUARIO</a>
+                            <a class="iniciar" href="{{ route('register') }}">Crear usuario</a>
                         </div>
                     </div>
                 @endif

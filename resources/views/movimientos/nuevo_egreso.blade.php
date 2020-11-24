@@ -29,7 +29,7 @@ NUEVO EGRESO
                     <input type="hidden" name="id" value="{{$producto->first()->id}}">
                 </div>
                 <div>
-                    <input type="submit" class="boton btn btn-primary" value="ACTUALIZAR">
+                    <input type="submit" class="boton btn btn-success" value="REGISTRAR" >
                 </div>
             </form>
         </div>
@@ -40,7 +40,7 @@ NUEVO EGRESO
     <div class="row">
         <div class="col-12">
             <a href="/egreso" class="float-right">
-                <input type="button" value="Volver" class="boton btn btn-primary"><br><br>
+                <input type="button" value="Volver" class="boton btn btn-primary">
             </a>
         </div>
     </div>

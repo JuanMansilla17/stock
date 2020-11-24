@@ -2,7 +2,7 @@
 
 @section("cabecera")
 
- EDITAR CATEGORÍAS
+ Editar categorias
 
 @endsection
 
@@ -19,16 +19,16 @@
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="PUT">
 
-                <input type="submit" name="enviar" value="Actualizar" class="boton btn btn-primary">
+                <input type="submit" name="enviar" value="ACTUALIZAR" class="boton btn btn-success" onclick="return confirm('¿Estas seguro?')>
             </form>
 
             <form  method="post" action="/categorias/{{$categoria->id}}">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="DELETE">
                 @if($hijos == 0)
-                    <input type="submit" value="Eliminar registro" class="boton btn btn-danger">
+                    <input type="submit" value="Eliminar registro" class="boton btn btn-danger" onclick="return confirm('¿Estas seguro?')>
                 @else
-                    <input type="submit" disabled="true" value="Eliminar registro" class="boton btn btn-danger">
+                    <input type="submit" disabled="true" value="ELIMINAR" class="boton btn btn-danger">
                     <p class="texto">Esta categoría no puede ser eliminada porque tiene productos asociados.</p>
                 @endif
                 

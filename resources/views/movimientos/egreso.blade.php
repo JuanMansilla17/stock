@@ -1,7 +1,7 @@
 @extends("../layouts/plantilla")
 
 @section("cabecera")
-EGRESO DE MERCADERÍA
+Egreso de mercadería
 @endsection
 
 
@@ -12,16 +12,16 @@ EGRESO DE MERCADERÍA
         <div class="col">
             <form action="/egreso/nuevo_egreso" method="POST">
                 @csrf
-                <div>
+                <div class="campo">
                     <label class="texto">Código</label> 
                     <input type="text" name="codigo_barras" class="form-control">
                 </div>
-                <div>
+                <div class="campo">
                     <label class="texto">Cantidad</label> 
                     <input type="number" name="cantidad" class="form-control">
                 </div>
                 
-                <input type="submit" value="Agregar" class="boton btn btn-primary">
+                <input type="submit" value="AGREGAR" class="boton btn btn-primary">
             </form>
         </div>
     </div>

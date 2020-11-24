@@ -10,13 +10,17 @@ PEDIDOS
     <div class="row">
         <div class='col-12'>
             <form action="/pedidos/list" method="GET">
-                <label class="texto">Desde:</label>
-                <input type="date" name="desde" class="form-control">
-
-                <label class="texto">Hasta:</label> 
-                <input type="date" name="hasta" class="form-control">
-
-                <input type="submit" value="Buscar" class="btn btn-primary" style="font-size: 20px;">
+                <div class="campo">
+                    <label class="texto">Desde:</label>
+                    <input type="date" name="desde" class="form-control">
+                </div>
+                
+                <div class="campo">
+                    <label class="texto">Hasta:</label> 
+                    <input type="date" name="hasta" class="form-control">
+                </div>
+                
+                <input type="submit" value="BUSCAR" class="btn btn-primary boton">
             </form>
         </div>
     </div>
@@ -26,7 +30,7 @@ PEDIDOS
 <div class="container mt-5">
     <div class="row">
         <div  class="col-12"> 
-        <a href="{{route('pedidos.create')}}"> <input class="boton btn btn-primary" type="button"  name="nuevo" value="Nuevo pedido" ></a>
+        <a href="{{route('pedidos.create')}}"> <input class="boton btn btn-primary" type="button"  name="nuevo" value="NUEVO PEDIDO" ></a>
         </div>
 </div>
 

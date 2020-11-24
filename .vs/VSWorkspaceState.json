@@ -2,12 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\Console",
     "\\app\\Http",
-    "\\database",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\proveedores",
-    "\\routes"
+    "\\resources\\views\\auth",
+    "\\resources\\views\\layouts"
   ],
+  "SelectedNode": "\\resources\\views\\layouts\\plantilla.blade.php",
   "PreviewInSolutionExplorer": false
 }

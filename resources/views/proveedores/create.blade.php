@@ -1,7 +1,7 @@
 @extends("../layouts.plantilla")
 
 @section("cabecera")
-AGREGAR PROVEEDORES
+Agregar proveedores
 @endsection
 
 
@@ -11,21 +11,21 @@ AGREGAR PROVEEDORES
     <div class="row">
         <div  class="col-12"> 
             <form action="/proveedores" method="POST">
-                <div>
+                <div class="campo">
                     <label class="texto">Razón social:</label>
                     <input type="text" name="razon_social" class="form-control">
                 </div>
-                <div>
+                <div class="campo">
                     <label class="texto">Teléfono:</label>
                     <input type="text" name="telefono" class="form-control">
                 </div>
-                <div>
+                <div class="campo">
                     <label class="texto">Email:</label>
                     <input type="email" name="mail" class="form-control">
                 </div>
                 {{csrf_field()}}
                 
-                <input type="submit" name="enviar" value="Enviar" class="boton btn btn-primary"> 
+                <input type="submit" name="enviar" value="GUARDAR" class="boton btn btn-success"> 
             </form>
         </div>
     </div>

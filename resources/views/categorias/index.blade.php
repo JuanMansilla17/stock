@@ -1,7 +1,7 @@
 @extends("../layouts.plantilla")
 
 @section("cabecera")
-LISTA DE CATEGORÍAS
+Lista de categorías
 @endsection
 
 
@@ -28,7 +28,7 @@ LISTA DE CATEGORÍAS
     <div class="container mt-5">
         <div class="row">
             <div  class="col-12"> 
-            <a href="{{route('categorias.create')}}"> <input class="boton btn btn-primary" type="button"  name="nuevo" value="Nuevo" ></a>
+            <a href="{{route('categorias.create')}}"> <input class="boton btn btn-primary" type="button"  name="nuevo" value="NUEVA CATEGORÍA" ></a>
             </div>
     </div> 
 
@@ -38,7 +38,7 @@ LISTA DE CATEGORÍAS
         <div class="row">
             <div class="col-12">
                 <a href="{{route('home')}}" class="float-right">
-                    <input type="button" value="Volver al menú" class="boton btn btn-primary"><br><br>
+                    <input type="button" value="Volver al menú" class="boton btn btn-primary" ><br><br>
                 </a>
             </div>
         </div>

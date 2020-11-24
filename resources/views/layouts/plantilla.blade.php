@@ -31,7 +31,7 @@
 
         .titulo{
             color: white;
-            font-size: 50px;
+            font-size: 40px;
         }
 
         .texto{
@@ -42,7 +42,7 @@
 
         .mensajeError{
             font-weight: bold;
-            color: black;
+            color: red;
             font-size: 20px;
         }
 
@@ -53,6 +53,12 @@
 
         .boton{
             font-size: 20px;
+            margin: 30px;
+        }
+
+        .campo{
+            margin-top: 20px;
+            margin-bottom: 10px
         }
     
     </style>

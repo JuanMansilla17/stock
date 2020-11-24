@@ -47,9 +47,21 @@ SELECCIONAR PRODUCTOS
                     </div>
 
                     <div>
-                        <input type="submit" class="boton btn btn-primary" value="Finalizar selección">
+                        <input type="submit" class="boton btn btn-primary" value="FINALIZAR SELECCIÓN">
+                    </div>
+
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="{{route('pedidos.create')}}" class="float-right">
+                                    <input type="button" value="Paso anterior" class="boton btn btn-primary">
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </form>
+
+                
             </div>
         </div>
     </div>

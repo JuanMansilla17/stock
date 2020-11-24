@@ -2,7 +2,7 @@
 
 @section("cabecera")
 
-AGREGAR CATEGORÍA
+Agregar categoría
 
 @endsection
 
@@ -12,12 +12,13 @@ AGREGAR CATEGORÍA
 <div class="container mt-5">
     <div class="row">
         <div  class="col-12"> 
-            <form action="/categorias" method="POST">
+            <form action="/categorias" method="POST" id="formulario">
                 <label class="texto" for="nuevaCategoria">Nueva Categoría:</label>
                 <input type="text" name="descripcion" class="form-control">
                 {{csrf_field()}}
 
-                <input type="submit" name="enviar" value="Enviar" class="boton btn btn-primary"> 
+                <button class="boton btn btn-success" onclick="confirmar()")>AGREGAR</button>
+                <!--<input type="submit" name="enviar" value="Enviar" class="boton btn btn-primary" onclick="return confirm('¿Estas seguro?')>-->
             </form>
         </div>
     </div>
