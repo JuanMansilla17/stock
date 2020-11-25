@@ -119,15 +119,19 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $Producto=Producto::findOrFail($id);
+
         $this->validate($request,
-        ['codigo_barras' => 'required|numeric|unique:productos,codigo_barras',
+        ['codigo_barras' => 'required|numeric',
         'descripcion' => 'required',
         'costo_compra' => 'required|between:0,99999999|numeric',
         'precio_venta' => 'required|between:0,99999999|numeric',
         'existencia' => 'required|between:0,99999999|integer',
         'stock_minimo' => 'required|between:0,99999999|integer']);
 
-        $Producto=Producto::findOrFail($id);
+        if($Producto->codigo_barras != $request->codigo_barras){
+            $this->validate($request, ['codigo_barras' => 'unique:productos,codigo_barras']);
+        }
 
         $Producto->update($request->all());
 

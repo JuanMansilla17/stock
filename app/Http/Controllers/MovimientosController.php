@@ -14,7 +14,7 @@ class MovimientosController extends Controller
 
     public function nuevo_ingreso(Request $request){
         $producto = Producto::where('codigo_barras', $request->input('codigo_barras'))->get();
-
+        
         return view("movimientos.nuevo_ingreso", compact("producto"));
     }
 
@@ -32,10 +32,22 @@ class MovimientosController extends Controller
     }
 
     public function nuevo_egreso(Request $request){
+        $this->validate($request,
+            [
+                'codigo_barras' => 'required | numeric | min:1',
+                'cantidad' => 'required | numeric | min:1'
+            ]);
+
         $producto = Producto::where('codigo_barras', $request->input('codigo_barras'))->get();
         $cantidad = $request->cantidad;
 
-        return view("movimientos.nuevo_egreso", compact("producto","cantidad"));
+        if(count($producto) > 0){
+            $productoEncontrado = true;
+        } else{
+            $productoEncontrado = false;
+        }
+
+        return view("movimientos.nuevo_egreso", compact("producto","cantidad","productoEncontrado"));
     }
 
     public function actualizar_egreso(Request $request){

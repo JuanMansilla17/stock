@@ -24,16 +24,13 @@ Agregar categoría
     </div>
 </div>
 
-<div >
-
-</div>
 @if(count($errors)>0)
     @foreach($errors->all() as $error)
         <p class="mensajeError">{{$error}}</p>
     @endforeach
 @endif
 
-<br>
+
     <div class="container mt-5">
         <div class="row">
             <div class="col-12">

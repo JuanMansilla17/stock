@@ -22,10 +22,14 @@ Egreso de mercadería
                         <input type="number" name="cantidad" class="form-control">
                     </div>
                 </div>
-                
-                
                 <input type="submit" value="AGREGAR" class="boton btn btn-primary">
             </form>
+
+            @if(count($errors)>0)
+                @foreach($errors->all() as $error)
+                    <p class="mensajeError">{{$error}}</p>
+                @endforeach
+            @endif
         </div>
     </div>
 </div>
