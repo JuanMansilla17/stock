@@ -29,7 +29,10 @@ class ProductosController extends Controller
     }
 
     public function list(Request $request){
-        $productosBuscados = Producto::where('categoria_id', $request->input('categoria'))->where('proveedor_id', $request->input('proveedor'))->get();
+        $productosBuscados = Producto::where('user_id', Auth::id())
+        ->where('categoria_id', $request->input('categoria'))
+        ->where('proveedor_id', $request->input('proveedor'))
+        ->get();
 
         return view("productos.list", compact("productosBuscados"));
     }
@@ -116,6 +119,8 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $Producto=Producto::findOrFail($id);
+
         $this->validate($request,
         ['codigo_barras' => 'required|numeric',
         'descripcion' => 'required',
@@ -124,7 +129,9 @@ class ProductosController extends Controller
         'existencia' => 'required|between:0,99999999|integer',
         'stock_minimo' => 'required|between:0,99999999|integer']);
 
-        $Producto=Producto::findOrFail($id);
+        if($Producto->codigo_barras != $request->codigo_barras){
+            $this->validate($request, ['codigo_barras' => 'unique:productos,codigo_barras']);
+        }
 
         $Producto->update($request->all());
 

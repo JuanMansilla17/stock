@@ -106,11 +106,18 @@ class ProveedoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, ['razon_social'=>['bail','required','regex:/^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([0-9a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/']]);
-        $this->validate($request, ['telefono'=>['bail','required','numeric','unique:proveedores']]);
-        $this->validate($request, ['mail'=>['bail','required','email','unique:proveedores']]);
-
         $proveedor=Proveedor::findOrFail($id);
+
+        $this->validate($request, ['razon_social'=>['bail','required','regex:/^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([0-9a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/']]);
+        $this->validate($request, ['telefono'=>['bail','required','numeric']]);
+        $this->validate($request, ['mail'=>['bail','required','email']]);
+
+        if($proveedor->telefono != $request->telefono){
+            $this->validate($request, ['telefono'=>'unique:proveedores']);
+        }
+        if($proveedor->mail != $request->mail){
+            $this->validate($request, ['mail'=>'unique:proveedores']);
+        }
 
         $proveedor->update($request->all());
 

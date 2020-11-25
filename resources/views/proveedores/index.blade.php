@@ -1,12 +1,12 @@
 @extends("../layouts.plantilla")
 
 @section("cabecera")
-LISTA DE PROVEEDORES
+Lista de proveedores
 @endsection
 
 
 @section("contenido")
-    <div class="container-fluid mt-5">
+    <div class="container mt-5">
         <div class="row"> 
             <div class="col-12">
                 <div class="scrollable">
@@ -29,7 +29,7 @@ LISTA DE PROVEEDORES
     <div class="container mt-5">
         <div class="row">
             <div  class="col-12"> 
-            <a href="{{route('proveedores.create')}}"> <input class="boton btn btn-primary" type="button"  name="nuevo" value="Nuevo" ></a>
+            <a href="{{route('proveedores.create')}}"> <input class="boton btn btn-primary" type="button"  name="nuevo" value="NUEVO"></a>
             </div>
     </div> 
 

@@ -1,7 +1,7 @@
 @extends("../layouts.plantilla")
 
 @section("cabecera")
-REGISTRO DE PRODUCTOS
+Registro de productos
 @endsection
 
 @section ("contenido")
@@ -34,6 +34,10 @@ REGISTRO DE PRODUCTOS
                         </tbody>
                     </table>
                 </div>
+                @if($productosBuscados->count()==0)
+                    <p class="mensajeError">No hay nungún producto registrado para este proveedor y categoría</p>
+                @endif
+
             </div>
         </div>
     </div>
@@ -41,9 +45,11 @@ REGISTRO DE PRODUCTOS
     <div class="container mt-5">
         <div class="row">
             <div  class="col-12"> 
-            <a href="{{route('productos.create')}}"> <input class="boton btn btn-primary" type="button"  name="nuevo" value="Nuevo" ></a>
+            <a href="{{route('productos.create')}}"> <input class="boton btn btn-primary" type="button"  name="nuevo" value="NUEVO" ></a>
             </div>
     </div>
+
+
 
     <div class="container mt-5">
         <div class="row">

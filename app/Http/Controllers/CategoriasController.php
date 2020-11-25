@@ -87,7 +87,7 @@ class CategoriasController extends Controller
     public function edit($id)
     {
         $categoria=Categoria::findOrFail($id);
-        $hijos = Producto::where('proveedor_id', $id)->count();
+        $hijos = Producto::where('categoria_id', $id)->count();
 
         return view("categorias.edit", compact("categoria", "hijos"));
     }

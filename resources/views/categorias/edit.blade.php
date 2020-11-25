@@ -2,7 +2,7 @@
 
 @section("cabecera")
 
- EDITAR CATEGORÍAS
+ Editar categorias
 
 @endsection
 
@@ -14,24 +14,22 @@
     <div class="row">
         <div  class="col-12"> 
             <form action="/categorias/{{$categoria->id}}" method="POST">
-                <label class="texto" for="nuevaCategoria">Categoría:</label>
-                <input type="text" name="descripcion" class="form-control" value="{{$categoria->descripcion}}">
+                <label class="texto">Categoría:</label>
+                <input type="text" name="descripcion" class="form-control col-sm-12 col-md-6" value="{{$categoria->descripcion}}">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="PUT">
-
-                <input type="submit" name="enviar" value="Actualizar" class="boton btn btn-primary">
+                <input type="submit" name="enviar" value="ACTUALIZAR" class="boton btn btn-success" >
             </form>
+
 
             <form  method="post" action="/categorias/{{$categoria->id}}">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="DELETE">
                 @if($hijos == 0)
-                    <input type="submit" value="Eliminar registro" class="boton btn btn-danger">
+                    <input type="submit" value="ELIMINAR" class="boton btn btn-danger" >
                 @else
-                    <input type="submit" disabled="true" value="Eliminar registro" class="boton btn btn-danger">
-                    <p class="texto">Esta categoría no puede ser eliminada porque tiene productos asociados.</p>
+                    <p class="mensajeError">Esta categoría no puede ser eliminada porque tiene productos asociados.</p>
                 @endif
-                
             </form>
         </div>
     </div>

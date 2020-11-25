@@ -1,28 +1,28 @@
-@extends("../layouts/plantilla")
+@extends("../layouts.plantilla")
 
 @section("cabecera")
-Egreso de mercadería
+PEDIDOS
 @endsection
-
 
 
 @section("contenido")
 <div class="container mt-5">
     <div class="row">
-        <div class="col">
-            <form action="/egreso/nuevo_egreso" method="POST">
+        <div class='col-12'>
+            <form action="/pedidos/list" method="GET">
                 <div class="row">
-                    @csrf
                     <div class="campo col-sm-12 col-md-4 campo">
-                        <label class="texto">Código</label> 
-                        <input type="text" name="codigo_barras" class="form-control">
+                        <label class="texto">Desde:</label>
+                        <input type="date" name="desde" class="form-control">
                     </div>
+                    
                     <div class="campo col-sm-12 col-md-4 campo">
-                        <label class="texto">Cantidad</label> 
-                        <input type="number" name="cantidad" class="form-control">
+                        <label class="texto">Hasta:</label> 
+                        <input type="date" name="hasta" class="form-control">
                     </div>
                 </div>
-                <input type="submit" value="AGREGAR" class="boton btn btn-primary">
+                
+                <input type="submit" value="BUSCAR" class="btn btn-primary boton">
             </form>
 
             @if(count($errors)>0)
@@ -37,6 +37,13 @@ Egreso de mercadería
 
 <div class="container mt-5">
     <div class="row">
+        <div  class="col-12"> 
+        <a href="{{route('pedidos.create')}}"> <input class="boton btn btn-primary" type="button"  name="nuevo" value="NUEVO PEDIDO" ></a>
+        </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
         <div class="col-12">
             <a href="{{route('home')}}" class="float-right">
                 <input type="button" value="Volver al menú" class="boton btn btn-primary"><br><br>
@@ -45,7 +52,6 @@ Egreso de mercadería
     </div>
 </div>
 @endsection
-
 
 
 @section("pie")
